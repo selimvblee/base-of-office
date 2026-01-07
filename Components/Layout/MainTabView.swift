@@ -6,13 +6,12 @@ struct MainTabView: View {
     
     var body: some View {
         ZStack(alignment: .bottom) {
-            // Screen Content
             Group {
                 switch selectedTab {
                 case 0:
                     HomeScreen()
                 case 1:
-                    CalendarPlaceholder() // Takvim ekranı için placeholder
+                    IndividualChecklistScreen()
                 case 2:
                     ManagerPanelScreen()
                 default:
@@ -24,8 +23,8 @@ struct MainTabView: View {
             // Custom Tab Bar (Neo-Brutalism)
             HStack(spacing: 0) {
                 tabItem(index: 0, icon: "house.fill", title: "Home")
-                tabItem(index: 1, icon: "calendar", title: "Calendar")
-                tabItem(index: 2, icon: "person.circle.fill", title: "Yönetici")
+                tabItem(index: 1, icon: "checklist", title: "Checklist")
+                tabItem(index: 2, icon: "shield.fill", title: "Yönetici")
             }
             .padding(.horizontal, 20)
             .padding(.vertical, 12)

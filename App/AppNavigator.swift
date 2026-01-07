@@ -8,17 +8,23 @@ struct AppNavigator: View {
         Group {
             if authService.isAuthenticated {
                 if let user = authService.currentUser {
-                    if user.teamId == nil && user.role == .company {
-                        // Şirket yöneticisi ve henüz takım kurmamış
-                        NavigationStack {
-                            CreateTeamScreen()
+                    if user.teamId == nil {
+                        // Takımı olmayan kullanıcılar
+                        switch user.role {
+                        case .company:
+                            NavigationStack { CreateTeamScreen() }
+                        case .employee, .partner:
+                            NavigationStack { JoinTeamScreen() }
+                        case .individual:
+                            MainTabView()
                         }
-                    } else if user.role == .partner {
-                        // İş ortağı için özel dashboard
-                        PartnerPanelScreen()
                     } else {
-                        // Ana uygulama
-                        MainTabView()
+                        // Takımı olan kullanıcılar
+                        if user.role == .partner {
+                            PartnerPanelScreen()
+                        } else {
+                            MainTabView()
+                        }
                     }
                 } else {
                     // Kullanıcı verisi yükleniyor

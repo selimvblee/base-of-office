@@ -188,6 +188,53 @@ class TaskService: ObservableObject {
             return try snapshot.documents.compactMap { doc in
                 try doc.data(as: CleaningStatus.self)
             }
+    /// İş ortağı talebini incele (Onayla/Reddet)
+    /// Onaylanırsa otomatik olarak bir görev oluşturur
+    func reviewPartnerRequest(
+        request: PartnerRequest,
+        status: PartnerRequest.RequestStatus,
+        reviewerId: String,
+        assignToMemberId: String? = nil
+    ) async throws {
+        guard let requestId = request.id else { return }
+        
+        do {
+            // Talebi güncelle
+            try await db.collection(FirestoreCollections.partnerRequests)
+                .document(requestId)
+                .updateData([
+                    "status": status.rawValue,
+                    "reviewedBy": reviewerId,
+                    "reviewedAt": Date(),
+                    "assignedTo": assignToMemberId as Any
+                ])
+            
+            // Eğer onaylandıysa OTOMATİK GÖREV OLUŞTUR
+            if status == .approved, let memberId = assignToMemberId {
+                try await createTask(
+                    title: "İş Ortağı: \(request.serviceType)",
+                    description: request.description,
+                    assignedTo: memberId,
+                    assignedBy: reviewerId,
+                    teamId: request.teamId,
+                    priority: .high,
+                    type: .partnerRequest
+                )
+                
+                // Aktivite oluştur
+                let activity = Activity(
+                    userId: reviewerId,
+                    teamId: request.teamId,
+                    type: .partnerRequestApproved,
+                    title: "Hizmet Talebi Onaylandı",
+                    description: "\(request.serviceType) için görev atandı."
+                )
+                
+                try db.collection(FirestoreCollections.activities)
+                    .addDocument(from: activity)
+            }
+            
+            print("✅ Partner request reviewed: \(status.displayName)")
         } catch {
             throw error
         }
