@@ -153,8 +153,8 @@ struct HomeDashboardView: View {
                 // Mevcut Kullanıcı - Panelleri Göster
                 ScrollView(.horizontal, showsIndicators: false) {
                     HStack(spacing: 15) {
-                        // Şirket Paneli - MainTabView'a yönlendir
-                        NavigationLink(destination: MainTabView()) {
+                        // Şirket Paneli - HomeScreen'e yönlendir
+                        NavigationLink(destination: HomeScreen()) {
                             PanelCard(
                                 title: teamService.currentTeam?.name ?? "Şirket",
                                 subtitle: "Şirket Paneli",

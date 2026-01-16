@@ -65,7 +65,7 @@ class AuthService: ObservableObject {
                         DispatchQueue.main.async {
                             self?.currentUser = user
                             self?.isAuthenticated = true
-                            self?.needsProfileSetup = false
+                            self?.needsProfileSetup = (user.username == nil || user.username?.isEmpty == true)
                         }
                     } catch {
                         print("❌ Error decoding user: \(error)")
@@ -131,7 +131,8 @@ class AuthService: ObservableObject {
                     id: firebaseUser.uid,
                     email: firebaseUser.email ?? "",
                     fullName: firebaseUser.displayName ?? "",
-                    role: nil // Role is nil, signifies setup needed
+                    username: nil,
+                    role: nil
                 )
                 
                 self.currentUser = tempUser
@@ -139,8 +140,11 @@ class AuthService: ObservableObject {
                 self.needsProfileSetup = true
                 self.isLoading = false
             } else {
-                print("✅ User exists in Firestore, fetching data...")
-                fetchUserData(userId: firebaseUser.uid)
+                print("✅ User exists in Firestore, checking completeness...")
+                let user = try userSnapshot.data(as: User.self)
+                self.currentUser = user
+                self.isAuthenticated = true
+                self.needsProfileSetup = (user.username == nil || user.username?.isEmpty == true)
                 self.isLoading = false
             }
         } catch {

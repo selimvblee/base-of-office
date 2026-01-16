@@ -1,12 +1,17 @@
 import SwiftUI
 import FirebaseFirestore
+import FirebaseAuth
+import PhotosUI
 
 struct ProfileSetupScreen: View {
-    @StateObject private var authService = AuthService.shared
+    @ObservedObject private var authService = AuthService.shared
     @State private var username: String = ""
     @State private var selectedAvatar: String = "person.circle.fill"
     @State private var isLoading = false
-    @State private var showResetAlert = false
+    
+    // Photo Selection
+    @State private var selectedItem: PhotosPickerItem? = nil
+    @State private var selectedImageData: Data? = nil
     
     let avatars = [
         "person.circle.fill", "face.smiling.fill", "bolt.circle.fill", 
@@ -30,24 +35,65 @@ struct ProfileSetupScreen: View {
                 .padding(.horizontal, 24)
                 
                 VStack(alignment: .leading, spacing: 32) {
-                    // Avatar Selection
+                    // Avatar & Photo Selection
                     VStack(alignment: .leading, spacing: 16) {
-                        Text("Avatar Seç")
+                        Text("Profil Fotoğrafı veya Avatar")
                             .font(.system(size: 14, weight: .bold))
                             .foregroundColor(AppColors.textSecondary)
+                        
+                        HStack(spacing: 20) {
+                            // Selected Preview
+                            ZStack {
+                                if let data = selectedImageData, let uiImage = UIImage(data: data) {
+                                    Image(uiImage: uiImage)
+                                        .resizable()
+                                        .scaledToFill()
+                                } else {
+                                    Image(systemName: selectedAvatar)
+                                        .font(.system(size: 40))
+                                        .foregroundColor(AppColors.textPrimary)
+                                }
+                            }
+                            .frame(width: 80, height: 80)
+                            .background(AppColors.background)
+                            .overlay(Rectangle().stroke(Color.black, lineWidth: 2))
+                            .background(Rectangle().fill(Color.black).offset(x: 3, y: 3))
+                            
+                            // Photo Picker Button
+                            PhotosPicker(selection: $selectedItem, matching: .images) {
+                                VStack(spacing: 4) {
+                                    Image(systemName: "photo.fill")
+                                        .font(.system(size: 20))
+                                    Text("Fotoğraf Seç")
+                                        .font(.system(size: 12, weight: .bold))
+                                }
+                                .foregroundColor(AppColors.textPrimary)
+                                .frame(width: 100, height: 80)
+                                .background(Color.neoLime)
+                                .overlay(Rectangle().stroke(Color.black, lineWidth: 2))
+                                .background(Rectangle().fill(Color.black).offset(x: 3, y: 3))
+                            }
+                        }
+                        .padding(.bottom, 8)
+                        
+                        Text("Veya avatar seçin:")
+                            .font(.system(size: 12, weight: .medium))
+                            .foregroundColor(AppColors.textTertiary)
                         
                         ScrollView(.horizontal, showsIndicators: false) {
                             HStack(spacing: 16) {
                                 ForEach(avatars, id: \.self) { avatar in
                                     Button(action: { 
                                         selectedAvatar = avatar
+                                        selectedImageData = nil 
+                                        selectedItem = nil
                                         UIImpactFeedbackGenerator(style: .light).impactOccurred()
                                     }) {
                                         Image(systemName: avatar)
                                             .font(.system(size: 30))
-                                            .foregroundColor(selectedAvatar == avatar ? .white : AppColors.textPrimary)
+                                            .foregroundColor(selectedAvatar == avatar && selectedImageData == nil ? .white : AppColors.textPrimary)
                                             .frame(width: 60, height: 60)
-                                            .background(selectedAvatar == avatar ? AppColors.primary : AppColors.background)
+                                            .background(selectedAvatar == avatar && selectedImageData == nil ? AppColors.primary : AppColors.background)
                                             .overlay(Rectangle().stroke(Color.black, lineWidth: 2))
                                             .background(
                                                 Rectangle()
@@ -100,6 +146,13 @@ struct ProfileSetupScreen: View {
         .onChange(of: authService.currentUser?.id) { _ in
             prefillInfo()
         }
+        .onChange(of: selectedItem) { newItem in
+            Task {
+                if let data = try? await newItem?.loadTransferable(type: Data.self) {
+                    selectedImageData = data
+                }
+            }
+        }
     }
     
     private func prefillInfo() {
@@ -109,37 +162,51 @@ struct ProfileSetupScreen: View {
     }
     
     private func saveProfile() {
-        guard let userId = authService.currentUser?.id, 
-              let email = authService.currentUser?.email else { return }
+        let currentAuthUser = authService.currentUser
+        guard let userId = currentAuthUser?.id ?? FirebaseConfig.shared.auth.currentUser?.uid else {
+            print("❌ No User ID found")
+            return
+        }
         
         isLoading = true
         UIImpactFeedbackGenerator(style: .medium).impactOccurred()
         
         let db = FirebaseConfig.shared.db
         
-        // Prepare updated user object
         var updatedUser = User(
             id: userId,
-            email: email,
-            fullName: authService.currentUser?.fullName,
+            email: currentAuthUser?.email ?? FirebaseConfig.shared.auth.currentUser?.email,
+            fullName: currentAuthUser?.fullName ?? FirebaseConfig.shared.auth.currentUser?.displayName,
             username: username,
-            role: .user // Default role as roles are removed from UI
+            role: .user
         )
-        updatedUser.profileImageURL = selectedAvatar
+        
+        updatedUser.profileImageURL = selectedImageData != nil ? "custom_photo" : selectedAvatar
+        
+        let data: [String: Any] = [
+            "id": userId,
+            "email": updatedUser.email ?? "",
+            "fullName": currentAuthUser?.fullName ?? "",
+            "username": username,
+            "role": "user",
+            "profileImageURL": updatedUser.profileImageURL ?? "",
+            "createdAt": FieldValue.serverTimestamp()
+        ]
         
         Task {
             do {
-                try db.collection(FirestoreCollections.users).document(userId).setData(from: updatedUser)
+                print("🔍 Attempting to save profile for user: \(userId)")
+                try await db.collection(FirestoreCollections.users).document(userId).setData(data, merge: true)
+                
                 await MainActor.run {
                     authService.currentUser = updatedUser
                     authService.needsProfileSetup = false
                     isLoading = false
-                    print("✅ Profile saved for user: \(username)")
+                    print("✅ Profile saved successfully")
                 }
             } catch {
                 print("❌ Error saving profile: \(error.localizedDescription)")
                 await MainActor.run { 
-                    authService.errorMessage = "Profil kaydedilemedi: \(error.localizedDescription)"
                     isLoading = false 
                 }
             }
