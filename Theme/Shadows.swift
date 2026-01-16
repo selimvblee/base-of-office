@@ -9,40 +9,40 @@ struct AppShadows {
     static let small = ShadowStyle(
         color: AppColors.border,
         radius: 0,
-        x: 3,
-        y: 3
+        x: 2,
+        y: 2
     )
     
     /// Orta boyutlu kartlar için sert gölge
     static let medium = ShadowStyle(
         color: AppColors.border,
         radius: 0,
-        x: 4,
-        y: 4
+        x: 2,
+        y: 2
     )
     
     /// Büyük kartlar ve modaller için sert gölge
     static let large = ShadowStyle(
         color: AppColors.border,
         radius: 0,
-        x: 6,
-        y: 6
+        x: 4,
+        y: 4
     )
     
     /// Butonlar için sert gölge (basıldığında değişir)
     static let button = ShadowStyle(
         color: AppColors.border,
         radius: 0,
-        x: 4,
-        y: 4
+        x: 2,
+        y: 2
     )
     
     /// Basılı buton gölgesi (daha küçük)
     static let buttonPressed = ShadowStyle(
         color: AppColors.border,
         radius: 0,
-        x: 2,
-        y: 2
+        x: 1,
+        y: 1
     )
 }
 

@@ -1,0 +1,336 @@
+{
+  "source": "/Users/selimyazanel/Desktop/Base of Office/BaseOfOffice/Base of Office/Base of Office/Screens/Dashboard/HomeScreen.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "Çıkış Yap",
+        "location": {
+          "startingColumn": 20,
+          "startingLine": 55
+        }
+      },
+      {
+        "comment": "",
+        "key": "İptal",
+        "location": {
+          "startingColumn": 24,
+          "startingLine": 56
+        }
+      },
+      {
+        "comment": "",
+        "key": "Çıkış",
+        "location": {
+          "startingColumn": 24,
+          "startingLine": 57
+        }
+      },
+      {
+        "comment": "",
+        "key": "Hesabınızdan çıkış yapmak istediğinize emin misiniz?",
+        "location": {
+          "startingColumn": 22,
+          "startingLine": 59
+        }
+      },
+      {
+        "comment": "",
+        "key": "Ekip ve Yetkiler",
+        "location": {
+          "startingColumn": 26,
+          "startingLine": 70
+        }
+      },
+      {
+        "comment": "",
+        "key": "Ekip üyelerinin yetkilerini buradan yönetin.",
+        "location": {
+          "startingColumn": 26,
+          "startingLine": 73
+        }
+      },
+      {
+        "comment": "",
+        "key": "Yönetici Yap",
+        "location": {
+          "startingColumn": 31,
+          "startingLine": 120
+        }
+      },
+      {
+        "comment": "",
+        "key": "Kullanıcı Yap",
+        "location": {
+          "startingColumn": 31,
+          "startingLine": 123
+        }
+      },
+      {
+        "comment": "",
+        "key": "Takımdan Çıkar",
+        "location": {
+          "startingColumn": 31,
+          "startingLine": 126
+        }
+      },
+      {
+        "comment": "",
+        "key": "%lld",
+        "location": {
+          "startingColumn": 26,
+          "startingLine": 192
+        }
+      },
+      {
+        "comment": "",
+        "key": "Departman: Yazılım",
+        "location": {
+          "startingColumn": 34,
+          "startingLine": 229
+        }
+      },
+      {
+        "comment": "",
+        "key": "12 Ekip Üyesi",
+        "location": {
+          "startingColumn": 34,
+          "startingLine": 235
+        }
+      },
+      {
+        "comment": "",
+        "key": "Takım Sohbeti",
+        "location": {
+          "startingColumn": 22,
+          "startingLine": 260
+        }
+      },
+      {
+        "comment": "",
+        "key": "Henüz mesaj yok.",
+        "location": {
+          "startingColumn": 30,
+          "startingLine": 266
+        }
+      },
+      {
+        "comment": "",
+        "key": "İlk mesajı siz gönderin! 💬",
+        "location": {
+          "startingColumn": 30,
+          "startingLine": 267
+        }
+      },
+      {
+        "comment": "",
+        "key": "Mesaj yazın...",
+        "location": {
+          "startingColumn": 31,
+          "startingLine": 284
+        }
+      },
+      {
+        "comment": "",
+        "key": "Hızlı İstatistikler",
+        "location": {
+          "startingColumn": 18,
+          "startingLine": 332
+        }
+      },
+      {
+        "comment": "",
+        "key": "Son Aktiviteler",
+        "location": {
+          "startingColumn": 18,
+          "startingLine": 383
+        }
+      },
+      {
+        "comment": "",
+        "key": "Bildirimler",
+        "location": {
+          "startingColumn": 30,
+          "startingLine": 480
+        }
+      },
+      {
+        "comment": "",
+        "key": "Kapat",
+        "location": {
+          "startingColumn": 80,
+          "startingLine": 482
+        }
+      },
+      {
+        "comment": "",
+        "key": "Takım Detayı",
+        "location": {
+          "startingColumn": 30,
+          "startingLine": 521
+        }
+      },
+      {
+        "comment": "",
+        "key": "Yazılım Departmanı",
+        "location": {
+          "startingColumn": 22,
+          "startingLine": 512
+        }
+      },
+      {
+        "comment": "",
+        "key": "Kapat",
+        "location": {
+          "startingColumn": 80,
+          "startingLine": 523
+        }
+      },
+      {
+        "comment": "",
+        "key": "Görevlerim",
+        "location": {
+          "startingColumn": 30,
+          "startingLine": 559
+        }
+      },
+      {
+        "comment": "",
+        "key": "Kapat",
+        "location": {
+          "startingColumn": 80,
+          "startingLine": 561
+        }
+      },
+      {
+        "comment": "",
+        "key": "Takım Görevleri",
+        "location": {
+          "startingColumn": 30,
+          "startingLine": 579
+        }
+      },
+      {
+        "comment": "",
+        "key": "Kapat",
+        "location": {
+          "startingColumn": 80,
+          "startingLine": 581
+        }
+      },
+      {
+        "comment": "",
+        "key": "Yaklaşan Eylemler",
+        "location": {
+          "startingColumn": 30,
+          "startingLine": 614
+        }
+      },
+      {
+        "comment": "",
+        "key": "Kapat",
+        "location": {
+          "startingColumn": 80,
+          "startingLine": 616
+        }
+      },
+      {
+        "comment": "",
+        "key": "Verimlilik",
+        "location": {
+          "startingColumn": 30,
+          "startingLine": 656
+        }
+      },
+      {
+        "comment": "",
+        "key": "85%",
+        "location": {
+          "startingColumn": 22,
+          "startingLine": 641
+        }
+      },
+      {
+        "comment": "",
+        "key": "Genel Verimlilik",
+        "location": {
+          "startingColumn": 22,
+          "startingLine": 642
+        }
+      },
+      {
+        "comment": "",
+        "key": "Kapat",
+        "location": {
+          "startingColumn": 80,
+          "startingLine": 658
+        }
+      },
+      {
+        "comment": "",
+        "key": "Temizlik Bildirimi",
+        "location": {
+          "startingColumn": 30,
+          "startingLine": 731
+        }
+      },
+      {
+        "comment": "",
+        "key": "Ofis Temizlik Durumu",
+        "location": {
+          "startingColumn": 22,
+          "startingLine": 699
+        }
+      },
+      {
+        "comment": "",
+        "key": "Durumu Kaydet",
+        "location": {
+          "startingColumn": 26,
+          "startingLine": 718
+        }
+      },
+      {
+        "comment": "",
+        "key": "Kapat",
+        "location": {
+          "startingColumn": 80,
+          "startingLine": 733
+        }
+      },
+      {
+        "comment": "",
+        "key": "Takıma Geri Bildirim",
+        "location": {
+          "startingColumn": 30,
+          "startingLine": 797
+        }
+      },
+      {
+        "comment": "",
+        "key": "Geri bildiriminizi yazın...",
+        "location": {
+          "startingColumn": 27,
+          "startingLine": 771
+        }
+      },
+      {
+        "comment": "",
+        "key": "Gönder",
+        "location": {
+          "startingColumn": 30,
+          "startingLine": 782
+        }
+      },
+      {
+        "comment": "",
+        "key": "Kapat",
+        "location": {
+          "startingColumn": 80,
+          "startingLine": 799
+        }
+      }
+    ]
+  },
+  "version": 1
+}

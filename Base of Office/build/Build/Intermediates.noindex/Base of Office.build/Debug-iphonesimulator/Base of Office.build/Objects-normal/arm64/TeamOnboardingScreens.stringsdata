@@ -1,0 +1,112 @@
+{
+  "source": "/Users/selimyazanel/Desktop/Base of Office/BaseOfOffice/Base of Office/Base of Office/Screens/Onboarding/TeamOnboardingScreens.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "Panelini Kur",
+        "location": {
+          "startingColumn": 26,
+          "startingLine": 15
+        }
+      },
+      {
+        "comment": "",
+        "key": "Takımınız için bir isim belirleyin. Bu panelin kurucusu siz olacaksınız.",
+        "location": {
+          "startingColumn": 26,
+          "startingLine": 17
+        }
+      },
+      {
+        "comment": "",
+        "key": "Takım / Şirket Adı",
+        "location": {
+          "startingColumn": 26,
+          "startingLine": 25
+        }
+      },
+      {
+        "comment": "",
+        "key": "Örn: Ofis Panelim",
+        "location": {
+          "startingColumn": 31,
+          "startingLine": 29
+        }
+      },
+      {
+        "comment": "",
+        "key": "Paneli Oluştur",
+        "location": {
+          "startingColumn": 34,
+          "startingLine": 47
+        }
+      },
+      {
+        "comment": "",
+        "key": "Tebrikler! 🎉",
+        "location": {
+          "startingColumn": 26,
+          "startingLine": 91
+        }
+      },
+      {
+        "comment": "",
+        "key": "Paneliniz kuruldu. Ekibinizi davet etmek için bu kodu kullanın:",
+        "location": {
+          "startingColumn": 26,
+          "startingLine": 93
+        }
+      },
+      {
+        "comment": "",
+        "key": "Dashboard'a Git",
+        "location": {
+          "startingColumn": 26,
+          "startingLine": 112
+        }
+      },
+      {
+        "comment": "",
+        "key": "Takıma Katıl",
+        "location": {
+          "startingColumn": 26,
+          "startingLine": 141
+        }
+      },
+      {
+        "comment": "",
+        "key": "Kurucunuzdan aldığınız 6 haneli davet kodunu girin.",
+        "location": {
+          "startingColumn": 26,
+          "startingLine": 143
+        }
+      },
+      {
+        "comment": "",
+        "key": "Davet Kodu",
+        "location": {
+          "startingColumn": 26,
+          "startingLine": 151
+        }
+      },
+      {
+        "comment": "",
+        "key": "Örn: OFFICE",
+        "location": {
+          "startingColumn": 31,
+          "startingLine": 155
+        }
+      },
+      {
+        "comment": "",
+        "key": "Katıl",
+        "location": {
+          "startingColumn": 34,
+          "startingLine": 185
+        }
+      }
+    ]
+  },
+  "version": 1
+}

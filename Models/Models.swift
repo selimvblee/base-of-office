@@ -10,17 +10,21 @@ struct User: Codable, Identifiable {
     var teamId: String?
     var createdAt: Date
     var profileImageURL: String?
+    var fcmToken: String?              // Push notification için FCM token
+    var notificationsEnabled: Bool     // Bildirim tercihi
     
     enum UserRole: String, Codable, CaseIterable {
-        case company = "company"           // Şirket yöneticisi
-        case employee = "employee"         // Çalışan
-        case partner = "partner"           // İş ortağı
-        case individual = "individual"     // Bireysel kullanıcı
+        case founder = "founder"           // Kurucu
+        case manager = "manager"           // Yönetici
+        case user = "user"                 // Kullanıcı
+        case partner = "partner"           // İş ortağı (kalıyor)
+        case individual = "individual"     // Bireysel (kalıyor)
         
         var displayName: String {
             switch self {
-            case .company: return "Şirket Yöneticisi"
-            case .employee: return "Çalışan"
+            case .founder: return "Kurucu"
+            case .manager: return "Yönetici"
+            case .user: return "Kullanıcı"
             case .partner: return "İş Ortağı"
             case .individual: return "Bireysel"
             }
@@ -34,7 +38,9 @@ struct User: Codable, Identifiable {
         role: UserRole,
         teamId: String? = nil,
         createdAt: Date = Date(),
-        profileImageURL: String? = nil
+        profileImageURL: String? = nil,
+        fcmToken: String? = nil,
+        notificationsEnabled: Bool = true
     ) {
         self.id = id
         self.email = email
@@ -43,6 +49,8 @@ struct User: Codable, Identifiable {
         self.teamId = teamId
         self.createdAt = createdAt
         self.profileImageURL = profileImageURL
+        self.fcmToken = fcmToken
+        self.notificationsEnabled = notificationsEnabled
     }
 }
 
@@ -82,7 +90,7 @@ struct Team: Codable, Identifiable {
 }
 
 /// Görev Modeli
-struct Task: Codable, Identifiable {
+struct OfficeTask: Codable, Identifiable {
     @DocumentID var id: String?
     var title: String
     var description: String
@@ -315,5 +323,86 @@ struct PartnerRequest: Codable, Identifiable {
         self.reviewedBy = reviewedBy
         self.reviewedAt = reviewedAt
         self.assignedTo = assignedTo
+    }
+}
+
+/// Bildirim Modeli
+struct Notification: Codable, Identifiable {
+    @DocumentID var id: String?
+    var userId: String              // Bildirimi alan kullanıcı
+    var title: String
+    var body: String
+    var type: NotificationType
+    var isRead: Bool
+    var createdAt: Date
+    var relatedTaskId: String?      // İlişkili görev (varsa)
+    var relatedTeamId: String?      // İlişkili takım (varsa)
+    
+    enum NotificationType: String, Codable, CaseIterable {
+        case taskAssigned = "task_assigned"           // Yeni görev atandı
+        case taskCompleted = "task_completed"         // Görev tamamlandı
+        case taskDueSoon = "task_due_soon"           // Görev yaklaşıyor
+        case teamInvite = "team_invite"               // Takım daveti
+        case partnerRequest = "partner_request"       // İş ortağı talebi
+        case cleaningAlert = "cleaning_alert"         // Temizlik uyarısı
+        case issueReported = "issue_reported"         // Sorun bildirildi
+        
+        var displayName: String {
+            switch self {
+            case .taskAssigned: return "Yeni Görev"
+            case .taskCompleted: return "Görev Tamamlandı"
+            case .taskDueSoon: return "Görev Yaklaşıyor"
+            case .teamInvite: return "Takım Daveti"
+            case .partnerRequest: return "İş Ortağı Talebi"
+            case .cleaningAlert: return "Temizlik Uyarısı"
+            case .issueReported: return "Sorun Bildirimi"
+            }
+        }
+        
+        var icon: String {
+            switch self {
+            case .taskAssigned: return "plus.circle.fill"
+            case .taskCompleted: return "checkmark.circle.fill"
+            case .taskDueSoon: return "clock.fill"
+            case .teamInvite: return "person.badge.plus.fill"
+            case .partnerRequest: return "person.crop.circle.badge.checkmark"
+            case .cleaningAlert: return "sparkles"
+            case .issueReported: return "exclamationmark.triangle.fill"
+            }
+        }
+        
+        var color: String {
+            switch self {
+            case .taskAssigned: return "activityPurple"
+            case .taskCompleted: return "successGreen"
+            case .taskDueSoon: return "feedbackOrange"
+            case .teamInvite: return "teamYellow"
+            case .partnerRequest: return "activityPurple"
+            case .cleaningAlert: return "feedbackOrange"
+            case .issueReported: return "taskRed"
+            }
+        }
+    }
+    
+    init(
+        id: String? = nil,
+        userId: String,
+        title: String,
+        body: String,
+        type: NotificationType,
+        isRead: Bool = false,
+        createdAt: Date = Date(),
+        relatedTaskId: String? = nil,
+        relatedTeamId: String? = nil
+    ) {
+        self.id = id
+        self.userId = userId
+        self.title = title
+        self.body = body
+        self.type = type
+        self.isRead = isRead
+        self.createdAt = createdAt
+        self.relatedTaskId = relatedTaskId
+        self.relatedTeamId = relatedTeamId
     }
 }

@@ -1,0 +1,1 @@
+@rpath/Base of Office.debug.dylib

@@ -1,0 +1,219 @@
+{
+  "" : {
+    "diagnostics" : "/Users/selimyazanel/Desktop/Base of Office/BaseOfOffice/Base of Office/build/Build/Intermediates.noindex/Base of Office.build/Debug-iphonesimulator/Base of Office.build/Objects-normal/arm64/Base of Office-primary.dia",
+    "emit-module-dependencies" : "/Users/selimyazanel/Desktop/Base of Office/BaseOfOffice/Base of Office/build/Build/Intermediates.noindex/Base of Office.build/Debug-iphonesimulator/Base of Office.build/Objects-normal/arm64/Base of Office-primary-emit-module.d",
+    "emit-module-diagnostics" : "/Users/selimyazanel/Desktop/Base of Office/BaseOfOffice/Base of Office/build/Build/Intermediates.noindex/Base of Office.build/Debug-iphonesimulator/Base of Office.build/Objects-normal/arm64/Base of Office-primary-emit-module.dia",
+    "pch" : "/Users/selimyazanel/Desktop/Base of Office/BaseOfOffice/Base of Office/build/Build/Intermediates.noindex/Base of Office.build/Debug-iphonesimulator/Base of Office.build/Objects-normal/arm64/Base of Office-primary-Bridging-header.pch",
+    "swift-dependencies" : "/Users/selimyazanel/Desktop/Base of Office/BaseOfOffice/Base of Office/build/Build/Intermediates.noindex/Base of Office.build/Debug-iphonesimulator/Base of Office.build/Objects-normal/arm64/Base of Office-primary.swiftdeps"
+  },
+  "/Users/selimyazanel/Desktop/Base of Office/BaseOfOffice/Base of Office/Base of Office/App/AppNavigator.swift" : {
+    "const-values" : "/Users/selimyazanel/Desktop/Base of Office/BaseOfOffice/Base of Office/build/Build/Intermediates.noindex/Base of Office.build/Debug-iphonesimulator/Base of Office.build/Objects-normal/arm64/AppNavigator.swiftconstvalues",
+    "dependencies" : "/Users/selimyazanel/Desktop/Base of Office/BaseOfOffice/Base of Office/build/Build/Intermediates.noindex/Base of Office.build/Debug-iphonesimulator/Base of Office.build/Objects-normal/arm64/AppNavigator.d",
+    "diagnostics" : "/Users/selimyazanel/Desktop/Base of Office/BaseOfOffice/Base of Office/build/Build/Intermediates.noindex/Base of Office.build/Debug-iphonesimulator/Base of Office.build/Objects-normal/arm64/AppNavigator.dia",
+    "index-unit-output-path" : "/Base of Office.build/Debug-iphonesimulator/Base of Office.build/Objects-normal/arm64/AppNavigator.o",
+    "llvm-bc" : "/Users/selimyazanel/Desktop/Base of Office/BaseOfOffice/Base of Office/build/Build/Intermediates.noindex/Base of Office.build/Debug-iphonesimulator/Base of Office.build/Objects-normal/arm64/AppNavigator.bc",
+    "object" : "/Users/selimyazanel/Desktop/Base of Office/BaseOfOffice/Base of Office/build/Build/Intermediates.noindex/Base of Office.build/Debug-iphonesimulator/Base of Office.build/Objects-normal/arm64/AppNavigator.o",
+    "swift-dependencies" : "/Users/selimyazanel/Desktop/Base of Office/BaseOfOffice/Base of Office/build/Build/Intermediates.noindex/Base of Office.build/Debug-iphonesimulator/Base of Office.build/Objects-normal/arm64/AppNavigator.swiftdeps",
+    "swiftmodule" : "/Users/selimyazanel/Desktop/Base of Office/BaseOfOffice/Base of Office/build/Build/Intermediates.noindex/Base of Office.build/Debug-iphonesimulator/Base of Office.build/Objects-normal/arm64/AppNavigator~partial.swiftmodule"
+  },
+  "/Users/selimyazanel/Desktop/Base of Office/BaseOfOffice/Base of Office/Base of Office/Base_of_OfficeApp.swift" : {
+    "const-values" : "/Users/selimyazanel/Desktop/Base of Office/BaseOfOffice/Base of Office/build/Build/Intermediates.noindex/Base of Office.build/Debug-iphonesimulator/Base of Office.build/Objects-normal/arm64/Base_of_OfficeApp.swiftconstvalues",
+    "dependencies" : "/Users/selimyazanel/Desktop/Base of Office/BaseOfOffice/Base of Office/build/Build/Intermediates.noindex/Base of Office.build/Debug-iphonesimulator/Base of Office.build/Objects-normal/arm64/Base_of_OfficeApp.d",
+    "diagnostics" : "/Users/selimyazanel/Desktop/Base of Office/BaseOfOffice/Base of Office/build/Build/Intermediates.noindex/Base of Office.build/Debug-iphonesimulator/Base of Office.build/Objects-normal/arm64/Base_of_OfficeApp.dia",
+    "index-unit-output-path" : "/Base of Office.build/Debug-iphonesimulator/Base of Office.build/Objects-normal/arm64/Base_of_OfficeApp.o",
+    "llvm-bc" : "/Users/selimyazanel/Desktop/Base of Office/BaseOfOffice/Base of Office/build/Build/Intermediates.noindex/Base of Office.build/Debug-iphonesimulator/Base of Office.build/Objects-normal/arm64/Base_of_OfficeApp.bc",
+    "object" : "/Users/selimyazanel/Desktop/Base of Office/BaseOfOffice/Base of Office/build/Build/Intermediates.noindex/Base of Office.build/Debug-iphonesimulator/Base of Office.build/Objects-normal/arm64/Base_of_OfficeApp.o",
+    "swift-dependencies" : "/Users/selimyazanel/Desktop/Base of Office/BaseOfOffice/Base of Office/build/Build/Intermediates.noindex/Base of Office.build/Debug-iphonesimulator/Base of Office.build/Objects-normal/arm64/Base_of_OfficeApp.swiftdeps",
+    "swiftmodule" : "/Users/selimyazanel/Desktop/Base of Office/BaseOfOffice/Base of Office/build/Build/Intermediates.noindex/Base of Office.build/Debug-iphonesimulator/Base of Office.build/Objects-normal/arm64/Base_of_OfficeApp~partial.swiftmodule"
+  },
+  "/Users/selimyazanel/Desktop/Base of Office/BaseOfOffice/Base of Office/Base of Office/Components/UI/BrutalistButton.swift" : {
+    "const-values" : "/Users/selimyazanel/Desktop/Base of Office/BaseOfOffice/Base of Office/build/Build/Intermediates.noindex/Base of Office.build/Debug-iphonesimulator/Base of Office.build/Objects-normal/arm64/BrutalistButton.swiftconstvalues",
+    "dependencies" : "/Users/selimyazanel/Desktop/Base of Office/BaseOfOffice/Base of Office/build/Build/Intermediates.noindex/Base of Office.build/Debug-iphonesimulator/Base of Office.build/Objects-normal/arm64/BrutalistButton.d",
+    "diagnostics" : "/Users/selimyazanel/Desktop/Base of Office/BaseOfOffice/Base of Office/build/Build/Intermediates.noindex/Base of Office.build/Debug-iphonesimulator/Base of Office.build/Objects-normal/arm64/BrutalistButton.dia",
+    "index-unit-output-path" : "/Base of Office.build/Debug-iphonesimulator/Base of Office.build/Objects-normal/arm64/BrutalistButton.o",
+    "llvm-bc" : "/Users/selimyazanel/Desktop/Base of Office/BaseOfOffice/Base of Office/build/Build/Intermediates.noindex/Base of Office.build/Debug-iphonesimulator/Base of Office.build/Objects-normal/arm64/BrutalistButton.bc",
+    "object" : "/Users/selimyazanel/Desktop/Base of Office/BaseOfOffice/Base of Office/build/Build/Intermediates.noindex/Base of Office.build/Debug-iphonesimulator/Base of Office.build/Objects-normal/arm64/BrutalistButton.o",
+    "swift-dependencies" : "/Users/selimyazanel/Desktop/Base of Office/BaseOfOffice/Base of Office/build/Build/Intermediates.noindex/Base of Office.build/Debug-iphonesimulator/Base of Office.build/Objects-normal/arm64/BrutalistButton.swiftdeps",
+    "swiftmodule" : "/Users/selimyazanel/Desktop/Base of Office/BaseOfOffice/Base of Office/build/Build/Intermediates.noindex/Base of Office.build/Debug-iphonesimulator/Base of Office.build/Objects-normal/arm64/BrutalistButton~partial.swiftmodule"
+  },
+  "/Users/selimyazanel/Desktop/Base of Office/BaseOfOffice/Base of Office/Base of Office/Components/UI/BrutalistCard.swift" : {
+    "const-values" : "/Users/selimyazanel/Desktop/Base of Office/BaseOfOffice/Base of Office/build/Build/Intermediates.noindex/Base of Office.build/Debug-iphonesimulator/Base of Office.build/Objects-normal/arm64/BrutalistCard.swiftconstvalues",
+    "dependencies" : "/Users/selimyazanel/Desktop/Base of Office/BaseOfOffice/Base of Office/build/Build/Intermediates.noindex/Base of Office.build/Debug-iphonesimulator/Base of Office.build/Objects-normal/arm64/BrutalistCard.d",
+    "diagnostics" : "/Users/selimyazanel/Desktop/Base of Office/BaseOfOffice/Base of Office/build/Build/Intermediates.noindex/Base of Office.build/Debug-iphonesimulator/Base of Office.build/Objects-normal/arm64/BrutalistCard.dia",
+    "index-unit-output-path" : "/Base of Office.build/Debug-iphonesimulator/Base of Office.build/Objects-normal/arm64/BrutalistCard.o",
+    "llvm-bc" : "/Users/selimyazanel/Desktop/Base of Office/BaseOfOffice/Base of Office/build/Build/Intermediates.noindex/Base of Office.build/Debug-iphonesimulator/Base of Office.build/Objects-normal/arm64/BrutalistCard.bc",
+    "object" : "/Users/selimyazanel/Desktop/Base of Office/BaseOfOffice/Base of Office/build/Build/Intermediates.noindex/Base of Office.build/Debug-iphonesimulator/Base of Office.build/Objects-normal/arm64/BrutalistCard.o",
+    "swift-dependencies" : "/Users/selimyazanel/Desktop/Base of Office/BaseOfOffice/Base of Office/build/Build/Intermediates.noindex/Base of Office.build/Debug-iphonesimulator/Base of Office.build/Objects-normal/arm64/BrutalistCard.swiftdeps",
+    "swiftmodule" : "/Users/selimyazanel/Desktop/Base of Office/BaseOfOffice/Base of Office/build/Build/Intermediates.noindex/Base of Office.build/Debug-iphonesimulator/Base of Office.build/Objects-normal/arm64/BrutalistCard~partial.swiftmodule"
+  },
+  "/Users/selimyazanel/Desktop/Base of Office/BaseOfOffice/Base of Office/Base of Office/Components/UI/BrutalistInput.swift" : {
+    "const-values" : "/Users/selimyazanel/Desktop/Base of Office/BaseOfOffice/Base of Office/build/Build/Intermediates.noindex/Base of Office.build/Debug-iphonesimulator/Base of Office.build/Objects-normal/arm64/BrutalistInput.swiftconstvalues",
+    "dependencies" : "/Users/selimyazanel/Desktop/Base of Office/BaseOfOffice/Base of Office/build/Build/Intermediates.noindex/Base of Office.build/Debug-iphonesimulator/Base of Office.build/Objects-normal/arm64/BrutalistInput.d",
+    "diagnostics" : "/Users/selimyazanel/Desktop/Base of Office/BaseOfOffice/Base of Office/build/Build/Intermediates.noindex/Base of Office.build/Debug-iphonesimulator/Base of Office.build/Objects-normal/arm64/BrutalistInput.dia",
+    "index-unit-output-path" : "/Base of Office.build/Debug-iphonesimulator/Base of Office.build/Objects-normal/arm64/BrutalistInput.o",
+    "llvm-bc" : "/Users/selimyazanel/Desktop/Base of Office/BaseOfOffice/Base of Office/build/Build/Intermediates.noindex/Base of Office.build/Debug-iphonesimulator/Base of Office.build/Objects-normal/arm64/BrutalistInput.bc",
+    "object" : "/Users/selimyazanel/Desktop/Base of Office/BaseOfOffice/Base of Office/build/Build/Intermediates.noindex/Base of Office.build/Debug-iphonesimulator/Base of Office.build/Objects-normal/arm64/BrutalistInput.o",
+    "swift-dependencies" : "/Users/selimyazanel/Desktop/Base of Office/BaseOfOffice/Base of Office/build/Build/Intermediates.noindex/Base of Office.build/Debug-iphonesimulator/Base of Office.build/Objects-normal/arm64/BrutalistInput.swiftdeps",
+    "swiftmodule" : "/Users/selimyazanel/Desktop/Base of Office/BaseOfOffice/Base of Office/build/Build/Intermediates.noindex/Base of Office.build/Debug-iphonesimulator/Base of Office.build/Objects-normal/arm64/BrutalistInput~partial.swiftmodule"
+  },
+  "/Users/selimyazanel/Desktop/Base of Office/BaseOfOffice/Base of Office/Base of Office/ContentView.swift" : {
+    "const-values" : "/Users/selimyazanel/Desktop/Base of Office/BaseOfOffice/Base of Office/build/Build/Intermediates.noindex/Base of Office.build/Debug-iphonesimulator/Base of Office.build/Objects-normal/arm64/ContentView.swiftconstvalues",
+    "dependencies" : "/Users/selimyazanel/Desktop/Base of Office/BaseOfOffice/Base of Office/build/Build/Intermediates.noindex/Base of Office.build/Debug-iphonesimulator/Base of Office.build/Objects-normal/arm64/ContentView.d",
+    "diagnostics" : "/Users/selimyazanel/Desktop/Base of Office/BaseOfOffice/Base of Office/build/Build/Intermediates.noindex/Base of Office.build/Debug-iphonesimulator/Base of Office.build/Objects-normal/arm64/ContentView.dia",
+    "index-unit-output-path" : "/Base of Office.build/Debug-iphonesimulator/Base of Office.build/Objects-normal/arm64/ContentView.o",
+    "llvm-bc" : "/Users/selimyazanel/Desktop/Base of Office/BaseOfOffice/Base of Office/build/Build/Intermediates.noindex/Base of Office.build/Debug-iphonesimulator/Base of Office.build/Objects-normal/arm64/ContentView.bc",
+    "object" : "/Users/selimyazanel/Desktop/Base of Office/BaseOfOffice/Base of Office/build/Build/Intermediates.noindex/Base of Office.build/Debug-iphonesimulator/Base of Office.build/Objects-normal/arm64/ContentView.o",
+    "swift-dependencies" : "/Users/selimyazanel/Desktop/Base of Office/BaseOfOffice/Base of Office/build/Build/Intermediates.noindex/Base of Office.build/Debug-iphonesimulator/Base of Office.build/Objects-normal/arm64/ContentView.swiftdeps",
+    "swiftmodule" : "/Users/selimyazanel/Desktop/Base of Office/BaseOfOffice/Base of Office/build/Build/Intermediates.noindex/Base of Office.build/Debug-iphonesimulator/Base of Office.build/Objects-normal/arm64/ContentView~partial.swiftmodule"
+  },
+  "/Users/selimyazanel/Desktop/Base of Office/BaseOfOffice/Base of Office/Base of Office/Persistence.swift" : {
+    "const-values" : "/Users/selimyazanel/Desktop/Base of Office/BaseOfOffice/Base of Office/build/Build/Intermediates.noindex/Base of Office.build/Debug-iphonesimulator/Base of Office.build/Objects-normal/arm64/Persistence.swiftconstvalues",
+    "dependencies" : "/Users/selimyazanel/Desktop/Base of Office/BaseOfOffice/Base of Office/build/Build/Intermediates.noindex/Base of Office.build/Debug-iphonesimulator/Base of Office.build/Objects-normal/arm64/Persistence.d",
+    "diagnostics" : "/Users/selimyazanel/Desktop/Base of Office/BaseOfOffice/Base of Office/build/Build/Intermediates.noindex/Base of Office.build/Debug-iphonesimulator/Base of Office.build/Objects-normal/arm64/Persistence.dia",
+    "index-unit-output-path" : "/Base of Office.build/Debug-iphonesimulator/Base of Office.build/Objects-normal/arm64/Persistence.o",
+    "llvm-bc" : "/Users/selimyazanel/Desktop/Base of Office/BaseOfOffice/Base of Office/build/Build/Intermediates.noindex/Base of Office.build/Debug-iphonesimulator/Base of Office.build/Objects-normal/arm64/Persistence.bc",
+    "object" : "/Users/selimyazanel/Desktop/Base of Office/BaseOfOffice/Base of Office/build/Build/Intermediates.noindex/Base of Office.build/Debug-iphonesimulator/Base of Office.build/Objects-normal/arm64/Persistence.o",
+    "swift-dependencies" : "/Users/selimyazanel/Desktop/Base of Office/BaseOfOffice/Base of Office/build/Build/Intermediates.noindex/Base of Office.build/Debug-iphonesimulator/Base of Office.build/Objects-normal/arm64/Persistence.swiftdeps",
+    "swiftmodule" : "/Users/selimyazanel/Desktop/Base of Office/BaseOfOffice/Base of Office/build/Build/Intermediates.noindex/Base of Office.build/Debug-iphonesimulator/Base of Office.build/Objects-normal/arm64/Persistence~partial.swiftmodule"
+  },
+  "/Users/selimyazanel/Desktop/Base of Office/BaseOfOffice/Base of Office/Base of Office/Screens/Dashboard/HomeScreen.swift" : {
+    "const-values" : "/Users/selimyazanel/Desktop/Base of Office/BaseOfOffice/Base of Office/build/Build/Intermediates.noindex/Base of Office.build/Debug-iphonesimulator/Base of Office.build/Objects-normal/arm64/HomeScreen.swiftconstvalues",
+    "dependencies" : "/Users/selimyazanel/Desktop/Base of Office/BaseOfOffice/Base of Office/build/Build/Intermediates.noindex/Base of Office.build/Debug-iphonesimulator/Base of Office.build/Objects-normal/arm64/HomeScreen.d",
+    "diagnostics" : "/Users/selimyazanel/Desktop/Base of Office/BaseOfOffice/Base of Office/build/Build/Intermediates.noindex/Base of Office.build/Debug-iphonesimulator/Base of Office.build/Objects-normal/arm64/HomeScreen.dia",
+    "index-unit-output-path" : "/Base of Office.build/Debug-iphonesimulator/Base of Office.build/Objects-normal/arm64/HomeScreen.o",
+    "llvm-bc" : "/Users/selimyazanel/Desktop/Base of Office/BaseOfOffice/Base of Office/build/Build/Intermediates.noindex/Base of Office.build/Debug-iphonesimulator/Base of Office.build/Objects-normal/arm64/HomeScreen.bc",
+    "object" : "/Users/selimyazanel/Desktop/Base of Office/BaseOfOffice/Base of Office/build/Build/Intermediates.noindex/Base of Office.build/Debug-iphonesimulator/Base of Office.build/Objects-normal/arm64/HomeScreen.o",
+    "swift-dependencies" : "/Users/selimyazanel/Desktop/Base of Office/BaseOfOffice/Base of Office/build/Build/Intermediates.noindex/Base of Office.build/Debug-iphonesimulator/Base of Office.build/Objects-normal/arm64/HomeScreen.swiftdeps",
+    "swiftmodule" : "/Users/selimyazanel/Desktop/Base of Office/BaseOfOffice/Base of Office/build/Build/Intermediates.noindex/Base of Office.build/Debug-iphonesimulator/Base of Office.build/Objects-normal/arm64/HomeScreen~partial.swiftmodule"
+  },
+  "/Users/selimyazanel/Desktop/Base of Office/BaseOfOffice/Base of Office/Base of Office/Screens/Dashboard/IndividualChecklistScreen.swift" : {
+    "const-values" : "/Users/selimyazanel/Desktop/Base of Office/BaseOfOffice/Base of Office/build/Build/Intermediates.noindex/Base of Office.build/Debug-iphonesimulator/Base of Office.build/Objects-normal/arm64/IndividualChecklistScreen.swiftconstvalues",
+    "dependencies" : "/Users/selimyazanel/Desktop/Base of Office/BaseOfOffice/Base of Office/build/Build/Intermediates.noindex/Base of Office.build/Debug-iphonesimulator/Base of Office.build/Objects-normal/arm64/IndividualChecklistScreen.d",
+    "diagnostics" : "/Users/selimyazanel/Desktop/Base of Office/BaseOfOffice/Base of Office/build/Build/Intermediates.noindex/Base of Office.build/Debug-iphonesimulator/Base of Office.build/Objects-normal/arm64/IndividualChecklistScreen.dia",
+    "index-unit-output-path" : "/Base of Office.build/Debug-iphonesimulator/Base of Office.build/Objects-normal/arm64/IndividualChecklistScreen.o",
+    "llvm-bc" : "/Users/selimyazanel/Desktop/Base of Office/BaseOfOffice/Base of Office/build/Build/Intermediates.noindex/Base of Office.build/Debug-iphonesimulator/Base of Office.build/Objects-normal/arm64/IndividualChecklistScreen.bc",
+    "object" : "/Users/selimyazanel/Desktop/Base of Office/BaseOfOffice/Base of Office/build/Build/Intermediates.noindex/Base of Office.build/Debug-iphonesimulator/Base of Office.build/Objects-normal/arm64/IndividualChecklistScreen.o",
+    "swift-dependencies" : "/Users/selimyazanel/Desktop/Base of Office/BaseOfOffice/Base of Office/build/Build/Intermediates.noindex/Base of Office.build/Debug-iphonesimulator/Base of Office.build/Objects-normal/arm64/IndividualChecklistScreen.swiftdeps",
+    "swiftmodule" : "/Users/selimyazanel/Desktop/Base of Office/BaseOfOffice/Base of Office/build/Build/Intermediates.noindex/Base of Office.build/Debug-iphonesimulator/Base of Office.build/Objects-normal/arm64/IndividualChecklistScreen~partial.swiftmodule"
+  },
+  "/Users/selimyazanel/Desktop/Base of Office/BaseOfOffice/Base of Office/Base of Office/Screens/Dashboard/ManagerPanelScreen.swift" : {
+    "const-values" : "/Users/selimyazanel/Desktop/Base of Office/BaseOfOffice/Base of Office/build/Build/Intermediates.noindex/Base of Office.build/Debug-iphonesimulator/Base of Office.build/Objects-normal/arm64/ManagerPanelScreen.swiftconstvalues",
+    "dependencies" : "/Users/selimyazanel/Desktop/Base of Office/BaseOfOffice/Base of Office/build/Build/Intermediates.noindex/Base of Office.build/Debug-iphonesimulator/Base of Office.build/Objects-normal/arm64/ManagerPanelScreen.d",
+    "diagnostics" : "/Users/selimyazanel/Desktop/Base of Office/BaseOfOffice/Base of Office/build/Build/Intermediates.noindex/Base of Office.build/Debug-iphonesimulator/Base of Office.build/Objects-normal/arm64/ManagerPanelScreen.dia",
+    "index-unit-output-path" : "/Base of Office.build/Debug-iphonesimulator/Base of Office.build/Objects-normal/arm64/ManagerPanelScreen.o",
+    "llvm-bc" : "/Users/selimyazanel/Desktop/Base of Office/BaseOfOffice/Base of Office/build/Build/Intermediates.noindex/Base of Office.build/Debug-iphonesimulator/Base of Office.build/Objects-normal/arm64/ManagerPanelScreen.bc",
+    "object" : "/Users/selimyazanel/Desktop/Base of Office/BaseOfOffice/Base of Office/build/Build/Intermediates.noindex/Base of Office.build/Debug-iphonesimulator/Base of Office.build/Objects-normal/arm64/ManagerPanelScreen.o",
+    "swift-dependencies" : "/Users/selimyazanel/Desktop/Base of Office/BaseOfOffice/Base of Office/build/Build/Intermediates.noindex/Base of Office.build/Debug-iphonesimulator/Base of Office.build/Objects-normal/arm64/ManagerPanelScreen.swiftdeps",
+    "swiftmodule" : "/Users/selimyazanel/Desktop/Base of Office/BaseOfOffice/Base of Office/build/Build/Intermediates.noindex/Base of Office.build/Debug-iphonesimulator/Base of Office.build/Objects-normal/arm64/ManagerPanelScreen~partial.swiftmodule"
+  },
+  "/Users/selimyazanel/Desktop/Base of Office/BaseOfOffice/Base of Office/Base of Office/Screens/Onboarding/TeamOnboardingScreens.swift" : {
+    "const-values" : "/Users/selimyazanel/Desktop/Base of Office/BaseOfOffice/Base of Office/build/Build/Intermediates.noindex/Base of Office.build/Debug-iphonesimulator/Base of Office.build/Objects-normal/arm64/TeamOnboardingScreens.swiftconstvalues",
+    "dependencies" : "/Users/selimyazanel/Desktop/Base of Office/BaseOfOffice/Base of Office/build/Build/Intermediates.noindex/Base of Office.build/Debug-iphonesimulator/Base of Office.build/Objects-normal/arm64/TeamOnboardingScreens.d",
+    "diagnostics" : "/Users/selimyazanel/Desktop/Base of Office/BaseOfOffice/Base of Office/build/Build/Intermediates.noindex/Base of Office.build/Debug-iphonesimulator/Base of Office.build/Objects-normal/arm64/TeamOnboardingScreens.dia",
+    "index-unit-output-path" : "/Base of Office.build/Debug-iphonesimulator/Base of Office.build/Objects-normal/arm64/TeamOnboardingScreens.o",
+    "llvm-bc" : "/Users/selimyazanel/Desktop/Base of Office/BaseOfOffice/Base of Office/build/Build/Intermediates.noindex/Base of Office.build/Debug-iphonesimulator/Base of Office.build/Objects-normal/arm64/TeamOnboardingScreens.bc",
+    "object" : "/Users/selimyazanel/Desktop/Base of Office/BaseOfOffice/Base of Office/build/Build/Intermediates.noindex/Base of Office.build/Debug-iphonesimulator/Base of Office.build/Objects-normal/arm64/TeamOnboardingScreens.o",
+    "swift-dependencies" : "/Users/selimyazanel/Desktop/Base of Office/BaseOfOffice/Base of Office/build/Build/Intermediates.noindex/Base of Office.build/Debug-iphonesimulator/Base of Office.build/Objects-normal/arm64/TeamOnboardingScreens.swiftdeps",
+    "swiftmodule" : "/Users/selimyazanel/Desktop/Base of Office/BaseOfOffice/Base of Office/build/Build/Intermediates.noindex/Base of Office.build/Debug-iphonesimulator/Base of Office.build/Objects-normal/arm64/TeamOnboardingScreens~partial.swiftmodule"
+  },
+  "/Users/selimyazanel/Desktop/Base of Office/BaseOfOffice/Base of Office/Base of Office/Screens/Partner/PartnerPanelScreen.swift" : {
+    "const-values" : "/Users/selimyazanel/Desktop/Base of Office/BaseOfOffice/Base of Office/build/Build/Intermediates.noindex/Base of Office.build/Debug-iphonesimulator/Base of Office.build/Objects-normal/arm64/PartnerPanelScreen.swiftconstvalues",
+    "dependencies" : "/Users/selimyazanel/Desktop/Base of Office/BaseOfOffice/Base of Office/build/Build/Intermediates.noindex/Base of Office.build/Debug-iphonesimulator/Base of Office.build/Objects-normal/arm64/PartnerPanelScreen.d",
+    "diagnostics" : "/Users/selimyazanel/Desktop/Base of Office/BaseOfOffice/Base of Office/build/Build/Intermediates.noindex/Base of Office.build/Debug-iphonesimulator/Base of Office.build/Objects-normal/arm64/PartnerPanelScreen.dia",
+    "index-unit-output-path" : "/Base of Office.build/Debug-iphonesimulator/Base of Office.build/Objects-normal/arm64/PartnerPanelScreen.o",
+    "llvm-bc" : "/Users/selimyazanel/Desktop/Base of Office/BaseOfOffice/Base of Office/build/Build/Intermediates.noindex/Base of Office.build/Debug-iphonesimulator/Base of Office.build/Objects-normal/arm64/PartnerPanelScreen.bc",
+    "object" : "/Users/selimyazanel/Desktop/Base of Office/BaseOfOffice/Base of Office/build/Build/Intermediates.noindex/Base of Office.build/Debug-iphonesimulator/Base of Office.build/Objects-normal/arm64/PartnerPanelScreen.o",
+    "swift-dependencies" : "/Users/selimyazanel/Desktop/Base of Office/BaseOfOffice/Base of Office/build/Build/Intermediates.noindex/Base of Office.build/Debug-iphonesimulator/Base of Office.build/Objects-normal/arm64/PartnerPanelScreen.swiftdeps",
+    "swiftmodule" : "/Users/selimyazanel/Desktop/Base of Office/BaseOfOffice/Base of Office/build/Build/Intermediates.noindex/Base of Office.build/Debug-iphonesimulator/Base of Office.build/Objects-normal/arm64/PartnerPanelScreen~partial.swiftmodule"
+  },
+  "/Users/selimyazanel/Desktop/Base of Office/BaseOfOffice/Base of Office/Base of Office/Services/MockServices.swift" : {
+    "const-values" : "/Users/selimyazanel/Desktop/Base of Office/BaseOfOffice/Base of Office/build/Build/Intermediates.noindex/Base of Office.build/Debug-iphonesimulator/Base of Office.build/Objects-normal/arm64/MockServices.swiftconstvalues",
+    "dependencies" : "/Users/selimyazanel/Desktop/Base of Office/BaseOfOffice/Base of Office/build/Build/Intermediates.noindex/Base of Office.build/Debug-iphonesimulator/Base of Office.build/Objects-normal/arm64/MockServices.d",
+    "diagnostics" : "/Users/selimyazanel/Desktop/Base of Office/BaseOfOffice/Base of Office/build/Build/Intermediates.noindex/Base of Office.build/Debug-iphonesimulator/Base of Office.build/Objects-normal/arm64/MockServices.dia",
+    "index-unit-output-path" : "/Base of Office.build/Debug-iphonesimulator/Base of Office.build/Objects-normal/arm64/MockServices.o",
+    "llvm-bc" : "/Users/selimyazanel/Desktop/Base of Office/BaseOfOffice/Base of Office/build/Build/Intermediates.noindex/Base of Office.build/Debug-iphonesimulator/Base of Office.build/Objects-normal/arm64/MockServices.bc",
+    "object" : "/Users/selimyazanel/Desktop/Base of Office/BaseOfOffice/Base of Office/build/Build/Intermediates.noindex/Base of Office.build/Debug-iphonesimulator/Base of Office.build/Objects-normal/arm64/MockServices.o",
+    "swift-dependencies" : "/Users/selimyazanel/Desktop/Base of Office/BaseOfOffice/Base of Office/build/Build/Intermediates.noindex/Base of Office.build/Debug-iphonesimulator/Base of Office.build/Objects-normal/arm64/MockServices.swiftdeps",
+    "swiftmodule" : "/Users/selimyazanel/Desktop/Base of Office/BaseOfOffice/Base of Office/build/Build/Intermediates.noindex/Base of Office.build/Debug-iphonesimulator/Base of Office.build/Objects-normal/arm64/MockServices~partial.swiftmodule"
+  },
+  "/Users/selimyazanel/Desktop/Base of Office/BaseOfOffice/Base of Office/Base of Office/Theme/Colors.swift" : {
+    "const-values" : "/Users/selimyazanel/Desktop/Base of Office/BaseOfOffice/Base of Office/build/Build/Intermediates.noindex/Base of Office.build/Debug-iphonesimulator/Base of Office.build/Objects-normal/arm64/Colors.swiftconstvalues",
+    "dependencies" : "/Users/selimyazanel/Desktop/Base of Office/BaseOfOffice/Base of Office/build/Build/Intermediates.noindex/Base of Office.build/Debug-iphonesimulator/Base of Office.build/Objects-normal/arm64/Colors.d",
+    "diagnostics" : "/Users/selimyazanel/Desktop/Base of Office/BaseOfOffice/Base of Office/build/Build/Intermediates.noindex/Base of Office.build/Debug-iphonesimulator/Base of Office.build/Objects-normal/arm64/Colors.dia",
+    "index-unit-output-path" : "/Base of Office.build/Debug-iphonesimulator/Base of Office.build/Objects-normal/arm64/Colors.o",
+    "llvm-bc" : "/Users/selimyazanel/Desktop/Base of Office/BaseOfOffice/Base of Office/build/Build/Intermediates.noindex/Base of Office.build/Debug-iphonesimulator/Base of Office.build/Objects-normal/arm64/Colors.bc",
+    "object" : "/Users/selimyazanel/Desktop/Base of Office/BaseOfOffice/Base of Office/build/Build/Intermediates.noindex/Base of Office.build/Debug-iphonesimulator/Base of Office.build/Objects-normal/arm64/Colors.o",
+    "swift-dependencies" : "/Users/selimyazanel/Desktop/Base of Office/BaseOfOffice/Base of Office/build/Build/Intermediates.noindex/Base of Office.build/Debug-iphonesimulator/Base of Office.build/Objects-normal/arm64/Colors.swiftdeps",
+    "swiftmodule" : "/Users/selimyazanel/Desktop/Base of Office/BaseOfOffice/Base of Office/build/Build/Intermediates.noindex/Base of Office.build/Debug-iphonesimulator/Base of Office.build/Objects-normal/arm64/Colors~partial.swiftmodule"
+  },
+  "/Users/selimyazanel/Desktop/Base of Office/BaseOfOffice/Base of Office/Base of Office/Theme/Shadows.swift" : {
+    "const-values" : "/Users/selimyazanel/Desktop/Base of Office/BaseOfOffice/Base of Office/build/Build/Intermediates.noindex/Base of Office.build/Debug-iphonesimulator/Base of Office.build/Objects-normal/arm64/Shadows.swiftconstvalues",
+    "dependencies" : "/Users/selimyazanel/Desktop/Base of Office/BaseOfOffice/Base of Office/build/Build/Intermediates.noindex/Base of Office.build/Debug-iphonesimulator/Base of Office.build/Objects-normal/arm64/Shadows.d",
+    "diagnostics" : "/Users/selimyazanel/Desktop/Base of Office/BaseOfOffice/Base of Office/build/Build/Intermediates.noindex/Base of Office.build/Debug-iphonesimulator/Base of Office.build/Objects-normal/arm64/Shadows.dia",
+    "index-unit-output-path" : "/Base of Office.build/Debug-iphonesimulator/Base of Office.build/Objects-normal/arm64/Shadows.o",
+    "llvm-bc" : "/Users/selimyazanel/Desktop/Base of Office/BaseOfOffice/Base of Office/build/Build/Intermediates.noindex/Base of Office.build/Debug-iphonesimulator/Base of Office.build/Objects-normal/arm64/Shadows.bc",
+    "object" : "/Users/selimyazanel/Desktop/Base of Office/BaseOfOffice/Base of Office/build/Build/Intermediates.noindex/Base of Office.build/Debug-iphonesimulator/Base of Office.build/Objects-normal/arm64/Shadows.o",
+    "swift-dependencies" : "/Users/selimyazanel/Desktop/Base of Office/BaseOfOffice/Base of Office/build/Build/Intermediates.noindex/Base of Office.build/Debug-iphonesimulator/Base of Office.build/Objects-normal/arm64/Shadows.swiftdeps",
+    "swiftmodule" : "/Users/selimyazanel/Desktop/Base of Office/BaseOfOffice/Base of Office/build/Build/Intermediates.noindex/Base of Office.build/Debug-iphonesimulator/Base of Office.build/Objects-normal/arm64/Shadows~partial.swiftmodule"
+  },
+  "/Users/selimyazanel/Desktop/Base of Office/BaseOfOffice/Base of Office/Base of Office/Theme/Theme.swift" : {
+    "const-values" : "/Users/selimyazanel/Desktop/Base of Office/BaseOfOffice/Base of Office/build/Build/Intermediates.noindex/Base of Office.build/Debug-iphonesimulator/Base of Office.build/Objects-normal/arm64/Theme.swiftconstvalues",
+    "dependencies" : "/Users/selimyazanel/Desktop/Base of Office/BaseOfOffice/Base of Office/build/Build/Intermediates.noindex/Base of Office.build/Debug-iphonesimulator/Base of Office.build/Objects-normal/arm64/Theme.d",
+    "diagnostics" : "/Users/selimyazanel/Desktop/Base of Office/BaseOfOffice/Base of Office/build/Build/Intermediates.noindex/Base of Office.build/Debug-iphonesimulator/Base of Office.build/Objects-normal/arm64/Theme.dia",
+    "index-unit-output-path" : "/Base of Office.build/Debug-iphonesimulator/Base of Office.build/Objects-normal/arm64/Theme.o",
+    "llvm-bc" : "/Users/selimyazanel/Desktop/Base of Office/BaseOfOffice/Base of Office/build/Build/Intermediates.noindex/Base of Office.build/Debug-iphonesimulator/Base of Office.build/Objects-normal/arm64/Theme.bc",
+    "object" : "/Users/selimyazanel/Desktop/Base of Office/BaseOfOffice/Base of Office/build/Build/Intermediates.noindex/Base of Office.build/Debug-iphonesimulator/Base of Office.build/Objects-normal/arm64/Theme.o",
+    "swift-dependencies" : "/Users/selimyazanel/Desktop/Base of Office/BaseOfOffice/Base of Office/build/Build/Intermediates.noindex/Base of Office.build/Debug-iphonesimulator/Base of Office.build/Objects-normal/arm64/Theme.swiftdeps",
+    "swiftmodule" : "/Users/selimyazanel/Desktop/Base of Office/BaseOfOffice/Base of Office/build/Build/Intermediates.noindex/Base of Office.build/Debug-iphonesimulator/Base of Office.build/Objects-normal/arm64/Theme~partial.swiftmodule"
+  },
+  "/Users/selimyazanel/Desktop/Base of Office/BaseOfOffice/Base of Office/Base of Office/Theme/Typography.swift" : {
+    "const-values" : "/Users/selimyazanel/Desktop/Base of Office/BaseOfOffice/Base of Office/build/Build/Intermediates.noindex/Base of Office.build/Debug-iphonesimulator/Base of Office.build/Objects-normal/arm64/Typography.swiftconstvalues",
+    "dependencies" : "/Users/selimyazanel/Desktop/Base of Office/BaseOfOffice/Base of Office/build/Build/Intermediates.noindex/Base of Office.build/Debug-iphonesimulator/Base of Office.build/Objects-normal/arm64/Typography.d",
+    "diagnostics" : "/Users/selimyazanel/Desktop/Base of Office/BaseOfOffice/Base of Office/build/Build/Intermediates.noindex/Base of Office.build/Debug-iphonesimulator/Base of Office.build/Objects-normal/arm64/Typography.dia",
+    "index-unit-output-path" : "/Base of Office.build/Debug-iphonesimulator/Base of Office.build/Objects-normal/arm64/Typography.o",
+    "llvm-bc" : "/Users/selimyazanel/Desktop/Base of Office/BaseOfOffice/Base of Office/build/Build/Intermediates.noindex/Base of Office.build/Debug-iphonesimulator/Base of Office.build/Objects-normal/arm64/Typography.bc",
+    "object" : "/Users/selimyazanel/Desktop/Base of Office/BaseOfOffice/Base of Office/build/Build/Intermediates.noindex/Base of Office.build/Debug-iphonesimulator/Base of Office.build/Objects-normal/arm64/Typography.o",
+    "swift-dependencies" : "/Users/selimyazanel/Desktop/Base of Office/BaseOfOffice/Base of Office/build/Build/Intermediates.noindex/Base of Office.build/Debug-iphonesimulator/Base of Office.build/Objects-normal/arm64/Typography.swiftdeps",
+    "swiftmodule" : "/Users/selimyazanel/Desktop/Base of Office/BaseOfOffice/Base of Office/build/Build/Intermediates.noindex/Base of Office.build/Debug-iphonesimulator/Base of Office.build/Objects-normal/arm64/Typography~partial.swiftmodule"
+  },
+  "/Users/selimyazanel/Desktop/Base of Office/BaseOfOffice/Base of Office/build/Build/Intermediates.noindex/Base of Office.build/Debug-iphonesimulator/Base of Office.build/DerivedSources/CoreDataGenerated/Base_of_Office/Base_of_Office+CoreDataModel.swift" : {
+    "const-values" : "/Users/selimyazanel/Desktop/Base of Office/BaseOfOffice/Base of Office/build/Build/Intermediates.noindex/Base of Office.build/Debug-iphonesimulator/Base of Office.build/Objects-normal/arm64/Base_of_Office+CoreDataModel.swiftconstvalues",
+    "dependencies" : "/Users/selimyazanel/Desktop/Base of Office/BaseOfOffice/Base of Office/build/Build/Intermediates.noindex/Base of Office.build/Debug-iphonesimulator/Base of Office.build/Objects-normal/arm64/Base_of_Office+CoreDataModel.d",
+    "diagnostics" : "/Users/selimyazanel/Desktop/Base of Office/BaseOfOffice/Base of Office/build/Build/Intermediates.noindex/Base of Office.build/Debug-iphonesimulator/Base of Office.build/Objects-normal/arm64/Base_of_Office+CoreDataModel.dia",
+    "index-unit-output-path" : "/Base of Office.build/Debug-iphonesimulator/Base of Office.build/Objects-normal/arm64/Base_of_Office+CoreDataModel.o",
+    "llvm-bc" : "/Users/selimyazanel/Desktop/Base of Office/BaseOfOffice/Base of Office/build/Build/Intermediates.noindex/Base of Office.build/Debug-iphonesimulator/Base of Office.build/Objects-normal/arm64/Base_of_Office+CoreDataModel.bc",
+    "object" : "/Users/selimyazanel/Desktop/Base of Office/BaseOfOffice/Base of Office/build/Build/Intermediates.noindex/Base of Office.build/Debug-iphonesimulator/Base of Office.build/Objects-normal/arm64/Base_of_Office+CoreDataModel.o",
+    "swift-dependencies" : "/Users/selimyazanel/Desktop/Base of Office/BaseOfOffice/Base of Office/build/Build/Intermediates.noindex/Base of Office.build/Debug-iphonesimulator/Base of Office.build/Objects-normal/arm64/Base_of_Office+CoreDataModel.swiftdeps",
+    "swiftmodule" : "/Users/selimyazanel/Desktop/Base of Office/BaseOfOffice/Base of Office/build/Build/Intermediates.noindex/Base of Office.build/Debug-iphonesimulator/Base of Office.build/Objects-normal/arm64/Base_of_Office+CoreDataModel~partial.swiftmodule"
+  },
+  "/Users/selimyazanel/Desktop/Base of Office/BaseOfOffice/Base of Office/build/Build/Intermediates.noindex/Base of Office.build/Debug-iphonesimulator/Base of Office.build/DerivedSources/CoreDataGenerated/Base_of_Office/Item+CoreDataClass.swift" : {
+    "const-values" : "/Users/selimyazanel/Desktop/Base of Office/BaseOfOffice/Base of Office/build/Build/Intermediates.noindex/Base of Office.build/Debug-iphonesimulator/Base of Office.build/Objects-normal/arm64/Item+CoreDataClass.swiftconstvalues",
+    "dependencies" : "/Users/selimyazanel/Desktop/Base of Office/BaseOfOffice/Base of Office/build/Build/Intermediates.noindex/Base of Office.build/Debug-iphonesimulator/Base of Office.build/Objects-normal/arm64/Item+CoreDataClass.d",
+    "diagnostics" : "/Users/selimyazanel/Desktop/Base of Office/BaseOfOffice/Base of Office/build/Build/Intermediates.noindex/Base of Office.build/Debug-iphonesimulator/Base of Office.build/Objects-normal/arm64/Item+CoreDataClass.dia",
+    "index-unit-output-path" : "/Base of Office.build/Debug-iphonesimulator/Base of Office.build/Objects-normal/arm64/Item+CoreDataClass.o",
+    "llvm-bc" : "/Users/selimyazanel/Desktop/Base of Office/BaseOfOffice/Base of Office/build/Build/Intermediates.noindex/Base of Office.build/Debug-iphonesimulator/Base of Office.build/Objects-normal/arm64/Item+CoreDataClass.bc",
+    "object" : "/Users/selimyazanel/Desktop/Base of Office/BaseOfOffice/Base of Office/build/Build/Intermediates.noindex/Base of Office.build/Debug-iphonesimulator/Base of Office.build/Objects-normal/arm64/Item+CoreDataClass.o",
+    "swift-dependencies" : "/Users/selimyazanel/Desktop/Base of Office/BaseOfOffice/Base of Office/build/Build/Intermediates.noindex/Base of Office.build/Debug-iphonesimulator/Base of Office.build/Objects-normal/arm64/Item+CoreDataClass.swiftdeps",
+    "swiftmodule" : "/Users/selimyazanel/Desktop/Base of Office/BaseOfOffice/Base of Office/build/Build/Intermediates.noindex/Base of Office.build/Debug-iphonesimulator/Base of Office.build/Objects-normal/arm64/Item+CoreDataClass~partial.swiftmodule"
+  },
+  "/Users/selimyazanel/Desktop/Base of Office/BaseOfOffice/Base of Office/build/Build/Intermediates.noindex/Base of Office.build/Debug-iphonesimulator/Base of Office.build/DerivedSources/CoreDataGenerated/Base_of_Office/Item+CoreDataProperties.swift" : {
+    "const-values" : "/Users/selimyazanel/Desktop/Base of Office/BaseOfOffice/Base of Office/build/Build/Intermediates.noindex/Base of Office.build/Debug-iphonesimulator/Base of Office.build/Objects-normal/arm64/Item+CoreDataProperties.swiftconstvalues",
+    "dependencies" : "/Users/selimyazanel/Desktop/Base of Office/BaseOfOffice/Base of Office/build/Build/Intermediates.noindex/Base of Office.build/Debug-iphonesimulator/Base of Office.build/Objects-normal/arm64/Item+CoreDataProperties.d",
+    "diagnostics" : "/Users/selimyazanel/Desktop/Base of Office/BaseOfOffice/Base of Office/build/Build/Intermediates.noindex/Base of Office.build/Debug-iphonesimulator/Base of Office.build/Objects-normal/arm64/Item+CoreDataProperties.dia",
+    "index-unit-output-path" : "/Base of Office.build/Debug-iphonesimulator/Base of Office.build/Objects-normal/arm64/Item+CoreDataProperties.o",
+    "llvm-bc" : "/Users/selimyazanel/Desktop/Base of Office/BaseOfOffice/Base of Office/build/Build/Intermediates.noindex/Base of Office.build/Debug-iphonesimulator/Base of Office.build/Objects-normal/arm64/Item+CoreDataProperties.bc",
+    "object" : "/Users/selimyazanel/Desktop/Base of Office/BaseOfOffice/Base of Office/build/Build/Intermediates.noindex/Base of Office.build/Debug-iphonesimulator/Base of Office.build/Objects-normal/arm64/Item+CoreDataProperties.o",
+    "swift-dependencies" : "/Users/selimyazanel/Desktop/Base of Office/BaseOfOffice/Base of Office/build/Build/Intermediates.noindex/Base of Office.build/Debug-iphonesimulator/Base of Office.build/Objects-normal/arm64/Item+CoreDataProperties.swiftdeps",
+    "swiftmodule" : "/Users/selimyazanel/Desktop/Base of Office/BaseOfOffice/Base of Office/build/Build/Intermediates.noindex/Base of Office.build/Debug-iphonesimulator/Base of Office.build/Objects-normal/arm64/Item+CoreDataProperties~partial.swiftmodule"
+  },
+  "/Users/selimyazanel/Desktop/Base of Office/BaseOfOffice/Base of Office/build/Build/Intermediates.noindex/Base of Office.build/Debug-iphonesimulator/Base of Office.build/DerivedSources/GeneratedAssetSymbols.swift" : {
+    "const-values" : "/Users/selimyazanel/Desktop/Base of Office/BaseOfOffice/Base of Office/build/Build/Intermediates.noindex/Base of Office.build/Debug-iphonesimulator/Base of Office.build/Objects-normal/arm64/GeneratedAssetSymbols.swiftconstvalues",
+    "dependencies" : "/Users/selimyazanel/Desktop/Base of Office/BaseOfOffice/Base of Office/build/Build/Intermediates.noindex/Base of Office.build/Debug-iphonesimulator/Base of Office.build/Objects-normal/arm64/GeneratedAssetSymbols.d",
+    "diagnostics" : "/Users/selimyazanel/Desktop/Base of Office/BaseOfOffice/Base of Office/build/Build/Intermediates.noindex/Base of Office.build/Debug-iphonesimulator/Base of Office.build/Objects-normal/arm64/GeneratedAssetSymbols.dia",
+    "index-unit-output-path" : "/Base of Office.build/Debug-iphonesimulator/Base of Office.build/Objects-normal/arm64/GeneratedAssetSymbols.o",
+    "llvm-bc" : "/Users/selimyazanel/Desktop/Base of Office/BaseOfOffice/Base of Office/build/Build/Intermediates.noindex/Base of Office.build/Debug-iphonesimulator/Base of Office.build/Objects-normal/arm64/GeneratedAssetSymbols.bc",
+    "object" : "/Users/selimyazanel/Desktop/Base of Office/BaseOfOffice/Base of Office/build/Build/Intermediates.noindex/Base of Office.build/Debug-iphonesimulator/Base of Office.build/Objects-normal/arm64/GeneratedAssetSymbols.o",
+    "swift-dependencies" : "/Users/selimyazanel/Desktop/Base of Office/BaseOfOffice/Base of Office/build/Build/Intermediates.noindex/Base of Office.build/Debug-iphonesimulator/Base of Office.build/Objects-normal/arm64/GeneratedAssetSymbols.swiftdeps",
+    "swiftmodule" : "/Users/selimyazanel/Desktop/Base of Office/BaseOfOffice/Base of Office/build/Build/Intermediates.noindex/Base of Office.build/Debug-iphonesimulator/Base of Office.build/Objects-normal/arm64/GeneratedAssetSymbols~partial.swiftmodule"
+  }
+}

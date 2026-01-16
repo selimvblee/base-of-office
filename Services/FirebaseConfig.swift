@@ -46,4 +46,5 @@ struct FirestoreCollections {
     static let activities = "activities"
     static let cleaningStatus = "cleaning_status"
     static let partnerRequests = "partner_requests"
+    static let notifications = "notifications"
 }

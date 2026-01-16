@@ -13,27 +13,26 @@ struct HomeScreen: View {
                 
                 ScrollView {
                     VStack(spacing: 24) {
-                        // Header: Tarih ve Kullanıcı Karşılama
+                        // Header
                         headerSection
                             .padding(.top, 10)
                         
-                        // Öne Çıkan Şirket/Takım Kartı
+                        // Öne Çıkan Takım Kartı
                         featuredTeamCard
                         
-                        // Quick Stats (Izgara Düzeni)
+                        // Takım Sohbeti
+                        teamChatSection
+                        
+                        // Quick Stats
                         quickStatsSection
                         
-                        // Recent Activity (Son Aktiviteler)
+                        // Recent Activity
                         recentActivitySection
                         
-                        Spacer()
-                            .frame(height: 100) // Tab bar için boşluk
+                        Spacer(minLength: 100)
                     }
-                    .padding(.horizontal, 20)
+                    .padding(.horizontal, 16)
                 }
-                
-                // Floating Action Button (+)
-                floatingActionButton
             }
         }
     }
@@ -43,37 +42,32 @@ struct HomeScreen: View {
     private var headerSection: some View {
         HStack(alignment: .top) {
             VStack(alignment: .leading, spacing: 4) {
-                Text(currentDateTurkish)
-                    .font(AppTypography.headline(weight: AppTypography.bold))
+                Text(currentDayName)
+                    .font(.system(size: 28, weight: .bold))
                     .foregroundColor(AppColors.textPrimary)
                 
-                Text(currentFullDateTurkish)
-                    .font(AppTypography.caption1())
+                Text(currentDateString)
+                    .font(.system(size: 14))
                     .foregroundColor(AppColors.textSecondary)
-                
-                Text("Merhaba, \(authService.currentUser?.fullName.split(separator: " ").first ?? "Kullanıcı") 👋")
-                    .font(AppTypography.title2(weight: AppTypography.bold))
-                    .foregroundColor(AppColors.textPrimary)
-                    .padding(.top, 8)
             }
             
             Spacer()
             
-            // Üst Sağ Butonlar
+            // Header Buttons
             HStack(spacing: 12) {
-                topIconButton(icon: "house.fill")
-                topIconButton(icon: "bell.fill")
-                topIconButton(icon: "rectangle.portrait.and.arrow.right") {
+                headerButton(icon: "house.fill")
+                headerButton(icon: "bell.fill")
+                headerButton(icon: "rectangle.portrait.and.arrow.right") {
                     try? authService.signOut()
                 }
                 
-                // Profil Avatarı
+                // Profile Avatar
                 Circle()
                     .fill(AppColors.taskRed)
                     .frame(width: 40, height: 40)
                     .overlay(
                         Text(authService.currentUser?.fullName.prefix(1) ?? "U")
-                            .font(AppTypography.headline(weight: AppTypography.bold))
+                            .font(.system(size: 16, weight: .bold))
                             .foregroundColor(.white)
                     )
                     .overlay(Circle().stroke(AppColors.border, lineWidth: 2))
@@ -81,60 +75,126 @@ struct HomeScreen: View {
         }
     }
     
-    private func topIconButton(icon: String, action: (() -> Void)? = nil) -> some View {
+    private func headerButton(icon: String, action: (() -> Void)? = nil) -> some View {
         Button(action: { action?() }) {
             Image(systemName: icon)
-                .font(AppTypography.headline(weight: AppTypography.bold))
+                .font(.system(size: 16, weight: .medium))
                 .foregroundColor(AppColors.textPrimary)
                 .frame(width: 40, height: 40)
-                .background(.white)
-                .overlay(Rectangle().stroke(AppColors.border, lineWidth: 2))
-                .mediumBrutalistShadow()
+                .background(AppColors.background)
+                .overlay(
+                    RoundedRectangle(cornerRadius: 8)
+                        .stroke(AppColors.border, lineWidth: 2)
+                )
         }
     }
     
     // MARK: - Featured Team Card
     
     private var featuredTeamCard: some View {
-        BrutalistCard(backgroundColor: AppColors.taskRed) {
-            HStack(spacing: 16) {
-                Image(systemName: "building.2.fill")
-                    .font(.system(size: 24, weight: .bold))
-                    .foregroundColor(AppColors.companyBlue)
-                    .frame(width: 60, height: 60)
-                    .background(.white)
-                    .cornerRadius(8)
-                    .overlay(RoundedRectangle(cornerRadius: 8).stroke(AppColors.border, lineWidth: 2))
+        HStack(spacing: 16) {
+            // Team Icon
+            Image(systemName: "building.2.fill")
+                .font(.system(size: 24, weight: .bold))
+                .foregroundColor(AppColors.companyBlue)
+                .frame(width: 60, height: 60)
+                .background(.white)
+                .cornerRadius(8)
+                .overlay(RoundedRectangle(cornerRadius: 8).stroke(AppColors.border, lineWidth: 2))
+            
+            VStack(alignment: .leading, spacing: 4) {
+                Text("Base of Agency")
+                    .font(.system(size: 17, weight: .bold))
+                    .foregroundColor(.white)
                 
-                VStack(alignment: .leading, spacing: 4) {
-                    Text("Base of Agency") // Örnek veri, gerçekte takımdan gelecek
-                        .font(AppTypography.headline(weight: AppTypography.bold))
-                        .foregroundColor(.white)
-                    
-                    HStack {
-                        Image(systemName: "folder.fill")
-                        Text("Departman:")
-                    }
-                    .font(AppTypography.caption2())
-                    .foregroundColor(.white.opacity(0.9))
+                HStack(spacing: 4) {
+                    Image(systemName: "folder.fill")
+                        .font(.system(size: 11))
+                    Text("Departman:")
+                        .font(.system(size: 11))
+                }
+                .foregroundColor(.white.opacity(0.9))
+                
+                HStack(spacing: 4) {
+                    Image(systemName: "person.2.fill")
+                        .font(.system(size: 11))
+                    Text("Ekibi görüntüle")
+                        .font(.system(size: 11, weight: .semibold))
+                }
+                .foregroundColor(AppColors.teamYellow)
+            }
+            
+            Spacer()
+            
+            Image(systemName: "arrow.right")
+                .font(.system(size: 16, weight: .bold))
+                .foregroundColor(AppColors.teamYellow)
+                .frame(width: 36, height: 36)
+                .background(AppColors.teamYellow.opacity(0.2))
+                .cornerRadius(8)
+        }
+        .padding(16)
+        .background(AppColors.taskRed)
+        .cornerRadius(12)
+        .overlay(
+            RoundedRectangle(cornerRadius: 12)
+                .stroke(AppColors.border, lineWidth: 3)
+        )
+        .shadow(color: AppColors.border, radius: 0, x: 4, y: 4)
+    }
+    
+    // MARK: - Team Chat Section
+    
+    private var teamChatSection: some View {
+        VStack(alignment: .leading, spacing: 12) {
+            HStack {
+                Image(systemName: "bubble.left.fill")
+                    .foregroundColor(AppColors.textSecondary)
+                Text("Takım Sohbeti")
+                    .font(.system(size: 16, weight: .bold))
+                    .foregroundColor(AppColors.textPrimary)
+            }
+            
+            VStack(spacing: 12) {
+                // Empty state
+                VStack(spacing: 8) {
+                    Text("Henüz mesaj yok.")
+                        .font(.system(size: 14))
+                        .foregroundColor(AppColors.textSecondary)
+                    Text("İlk mesajı siz gönderin! 💬")
+                        .font(.system(size: 12))
+                        .foregroundColor(AppColors.textLight)
+                }
+                .frame(maxWidth: .infinity)
+                .padding(.vertical, 30)
+                
+                // Message input
+                HStack(spacing: 12) {
+                    TextField("Mesaj yazın...", text: .constant(""))
+                        .font(.system(size: 14))
+                        .padding(12)
+                        .background(AppColors.backgroundSecondary)
+                        .cornerRadius(8)
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 8)
+                                .stroke(AppColors.border, lineWidth: 2)
+                        )
                     
                     Button(action: {}) {
-                        HStack {
-                            Image(systemName: "person.2.fill")
-                            Text("Ekibi görüntüle")
-                        }
-                        .font(AppTypography.caption2(weight: AppTypography.semiBold))
-                        .foregroundColor(AppColors.teamYellow)
+                        Image(systemName: "arrow.up.circle.fill")
+                            .font(.system(size: 32))
+                            .foregroundColor(AppColors.feedbackOrange)
                     }
                 }
-                
-                Spacer()
-                
-                Image(systemName: "arrow.right.circle.fill")
-                    .font(.title2)
-                    .foregroundColor(AppColors.teamYellow)
             }
             .padding(16)
+            .background(AppColors.background)
+            .cornerRadius(12)
+            .overlay(
+                RoundedRectangle(cornerRadius: 12)
+                    .stroke(AppColors.border, lineWidth: 3)
+            )
+            .shadow(color: AppColors.border, radius: 0, x: 4, y: 4)
         }
     }
     
@@ -143,107 +203,176 @@ struct HomeScreen: View {
     private var quickStatsSection: some View {
         VStack(alignment: .leading, spacing: 16) {
             Text("Quick Stats")
-                .font(AppTypography.title3(weight: AppTypography.bold))
+                .font(.system(size: 18, weight: .bold))
                 .foregroundColor(AppColors.textPrimary)
             
-            LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], spacing: 16) {
-                QuickStatsCard(
-                    title: "Görevlerim",
-                    value: "0",
-                    icon: "checkmark.circle.fill",
-                    backgroundColor: AppColors.taskRed,
-                    size: .medium
-                )
+            // 2x2 Grid
+            VStack(spacing: 12) {
+                HStack(spacing: 12) {
+                    // Görevlerim - Kırmızı
+                    statCard(
+                        title: "Görevlerim",
+                        value: "0",
+                        icon: "checkmark.circle.fill",
+                        backgroundColor: AppColors.taskRed
+                    )
+                    
+                    // Takım Görevleri - Sarı
+                    statCard(
+                        title: "Takım Görevleri",
+                        value: "0",
+                        icon: "person.2.fill",
+                        backgroundColor: AppColors.teamYellow
+                    )
+                }
                 
-                QuickStatsCard(
-                    title: "Takım Görevleri",
-                    value: "0",
-                    icon: "person.2.fill",
-                    backgroundColor: AppColors.teamYellow,
-                    size: .medium
-                )
-                
-                QuickStatsCard(
-                    title: "Yaklaşan Eylemler",
-                    value: "0",
-                    icon: "calendar.badge.clock",
-                    backgroundColor: AppColors.feedbackOrange,
-                    size: .medium
-                )
-                
-                QuickStatsCard(
-                    title: "Verimlilik",
-                    value: "%0",
-                    icon: "chart.line.uptrend.xyaxis",
-                    backgroundColor: AppColors.activityPurple,
-                    size: .medium
-                )
+                HStack(spacing: 12) {
+                    // Yaklaşan Eylemler - Turuncu
+                    statCard(
+                        title: "Yaklaşan Eylemler",
+                        value: "0",
+                        icon: "calendar.badge.clock",
+                        backgroundColor: AppColors.feedbackOrange
+                    )
+                    
+                    // Verimlilik - Mor
+                    statCard(
+                        title: "Verimlilik",
+                        value: "%0",
+                        icon: "chart.line.uptrend.xyaxis",
+                        backgroundColor: AppColors.activityPurple
+                    )
+                }
             }
         }
+    }
+    
+    private func statCard(title: String, value: String, icon: String, backgroundColor: Color) -> some View {
+        VStack(alignment: .leading, spacing: 8) {
+            // Icon with semi-transparent background
+            Image(systemName: icon)
+                .font(.system(size: 18, weight: .bold))
+                .foregroundColor(.white)
+                .frame(width: 36, height: 36)
+                .background(Color.white.opacity(0.2))
+                .cornerRadius(8)
+            
+            Spacer()
+            
+            Text(value)
+                .font(.system(size: 32, weight: .black))
+                .foregroundColor(.white)
+            
+            Text(title)
+                .font(.system(size: 13, weight: .semibold))
+                .foregroundColor(.white.opacity(0.9))
+        }
+        .padding(16)
+        .frame(maxWidth: .infinity, minHeight: 120, alignment: .leading)
+        .background(backgroundColor)
+        .cornerRadius(12)
+        .overlay(
+            RoundedRectangle(cornerRadius: 12)
+                .stroke(AppColors.border, lineWidth: 3)
+        )
+        .shadow(color: AppColors.border, radius: 0, x: 4, y: 4)
     }
     
     // MARK: - Recent Activity Section
     
     private var recentActivitySection: some View {
-        VStack(alignment: .leading, spacing: 16) {
+        VStack(alignment: .leading, spacing: 12) {
             Text("Recent Activity")
-                .font(AppTypography.title3(weight: AppTypography.bold))
+                .font(.system(size: 18, weight: .bold))
                 .foregroundColor(AppColors.textPrimary)
             
-            VStack(spacing: 12) {
-                // Temizlik Bildirimi Kartı
-                ActivityCard(
-                    title: "Temizlik Bildirimi",
-                    description: "Ofis temizlik durumunu bildir",
-                    time: "",
-                    icon: "paintpalette.fill",
-                    iconColor: AppColors.activityPurple
-                )
-                
-                // Geri Bildirim Kartı
-                ActivityCard(
-                    title: "Takıma Geri Bildirim",
-                    description: "Takımınıza mesaj gönderin",
-                    time: "",
-                    icon: "bubble.left.fill",
-                    iconColor: AppColors.feedbackOrange
-                )
-            }
+            // Temizlik Bildirimi - Purple
+            activityCard(
+                icon: "sparkles",
+                title: "Temizlik Bildirimi",
+                subtitle: "Ofis temizlik durumunu bildir",
+                color: AppColors.activityPurple,
+                showArrow: true
+            )
+            
+            // Takıma Geri Bildirim - Orange
+            activityCard(
+                icon: "message.fill",
+                title: "Takıma Geri Bildirim",
+                subtitle: "Takımınıza mesaj gönderin",
+                color: AppColors.feedbackOrange,
+                showPlusButton: true
+            )
         }
     }
     
-    // MARK: - Floating Action Button
-    
-    private var floatingActionButton: some View {
-        VStack {
+    private func activityCard(
+        icon: String,
+        title: String,
+        subtitle: String,
+        color: Color,
+        showArrow: Bool = false,
+        showPlusButton: Bool = false
+    ) -> some View {
+        HStack(spacing: 14) {
+            Image(systemName: icon)
+                .font(.system(size: 18, weight: .bold))
+                .foregroundColor(.white)
+                .frame(width: 40, height: 40)
+                .background(Color.white.opacity(0.2))
+                .cornerRadius(10)
+            
+            VStack(alignment: .leading, spacing: 2) {
+                Text(title)
+                    .font(.system(size: 15, weight: .bold))
+                    .foregroundColor(.white)
+                
+                Text(subtitle)
+                    .font(.system(size: 12))
+                    .foregroundColor(.white.opacity(0.8))
+            }
+            
             Spacer()
-            HStack {
-                Spacer()
-                Button(action: {}) {
-                    Image(systemName: "plus")
-                        .font(.title.bold())
-                        .foregroundColor(.white)
-                        .frame(width: 60, height: 60)
-                        .background(AppColors.taskRed)
-                        .overlay(Circle().stroke(AppColors.border, lineWidth: 3))
-                        .mediumBrutalistShadow()
-                }
-                .padding(.trailing, 24)
-                .padding(.bottom, 100)
+            
+            if showArrow {
+                Image(systemName: "chevron.right")
+                    .font(.system(size: 16, weight: .bold))
+                    .foregroundColor(.white)
+            }
+            
+            if showPlusButton {
+                Image(systemName: "plus")
+                    .font(.system(size: 16, weight: .bold))
+                    .foregroundColor(.white)
+                    .frame(width: 36, height: 36)
+                    .background(AppColors.taskRed)
+                    .cornerRadius(8)
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 8)
+                            .stroke(AppColors.border, lineWidth: 2)
+                    )
             }
         }
+        .padding(14)
+        .background(color)
+        .cornerRadius(12)
+        .overlay(
+            RoundedRectangle(cornerRadius: 12)
+                .stroke(AppColors.border, lineWidth: 3)
+        )
+        .shadow(color: AppColors.border, radius: 0, x: 4, y: 4)
     }
     
     // MARK: - Helpers
     
-    private var currentDateTurkish: String {
+    private var currentDayName: String {
         let formatter = DateFormatter()
         formatter.locale = Locale(identifier: "tr_TR")
         formatter.dateFormat = "EEEE"
         return formatter.string(from: Date()).capitalized
     }
     
-    private var currentFullDateTurkish: String {
+    private var currentDateString: String {
         let formatter = DateFormatter()
         formatter.locale = Locale(identifier: "tr_TR")
         formatter.dateFormat = "d MMMM yyyy"

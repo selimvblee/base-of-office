@@ -1,0 +1,40 @@
+{
+  "source": "/Users/selimyazanel/Desktop/Base of Office/BaseOfOffice/Base of Office/Base of Office/Base_of_OfficeApp.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "Ana Sayfa",
+        "location": {
+          "startingColumn": 26,
+          "startingLine": 30
+        }
+      },
+      {
+        "comment": "",
+        "key": "Bireysel",
+        "location": {
+          "startingColumn": 30,
+          "startingLine": 39
+        }
+      },
+      {
+        "comment": "",
+        "key": "Yönetici",
+        "location": {
+          "startingColumn": 30,
+          "startingLine": 49
+        }
+      },
+      {
+        "comment": "",
+        "key": "İş Ortağı",
+        "location": {
+          "startingColumn": 30,
+          "startingLine": 59
+        }
+      }
+    ]
+  },
+  "version": 1
+}

@@ -1,0 +1,40 @@
+{
+  "source": "/Users/selimyazanel/Desktop/Base of Office/BaseOfOffice/Base of Office/Base of Office/Components/UI/BrutalistCard.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "%lld",
+        "location": {
+          "startingColumn": 26,
+          "startingLine": 121
+        }
+      },
+      {
+        "comment": "",
+        "key": "Üye",
+        "location": {
+          "startingColumn": 26,
+          "startingLine": 125
+        }
+      },
+      {
+        "comment": "",
+        "key": "TEMİZ",
+        "location": {
+          "startingColumn": 36,
+          "startingLine": 219
+        }
+      },
+      {
+        "comment": "",
+        "key": "KİRLİ",
+        "location": {
+          "startingColumn": 47,
+          "startingLine": 219
+        }
+      }
+    ]
+  },
+  "version": 1
+}
