@@ -2,12 +2,15 @@ import SwiftUI
 
 /// Giriş Ekranı - Neo-Brutalism Tasarım
 struct SignInScreen: View {
-    @StateObject private var authService = AuthService()
+    @ObservedObject private var authService = AuthService.shared
     
     @State private var email = ""
     @State private var password = ""
     @State private var rememberMe = false
     @State private var showError = false
+    @State private var showGoogleSetup = false
+    @State private var googleUserEmail = ""
+    @State private var googleUserFullName = ""
     
     var body: some View {
         NavigationStack {
@@ -19,7 +22,6 @@ struct SignInScreen: View {
                     VStack(spacing: 32) {
                         // Logo ve Başlık
                         VStack(spacing: 16) {
-                            // Base of Office Logo
                             Text("base")
                                 .font(AppTypography.largeTitle(weight: AppTypography.black))
                                 .foregroundColor(AppColors.textPrimary)
@@ -28,29 +30,23 @@ struct SignInScreen: View {
                                 .font(AppTypography.largeTitle(weight: AppTypography.black))
                                 .foregroundColor(AppColors.taskRed)
                             
-                            Text("Welcome to")
+                            Text("Office Operations")
                                 .font(AppTypography.callout())
                                 .foregroundColor(AppColors.textSecondary)
-                            
-                            Text("Manage your office, elevate your operations.")
-                                .font(AppTypography.caption1())
-                                .foregroundColor(AppColors.textLight)
-                                .multilineTextAlignment(.center)
-                                .padding(.horizontal, 40)
                         }
                         .padding(.top, 60)
                         
                         // Form
                         VStack(spacing: 16) {
                             BrutalistTextField(
-                                placeholder: "Email",
-                                icon: "envelope.fill",
+                                placeholder: "Kullanıcı Adı veya Email",
+                                icon: "person.fill",
                                 text: $email,
                                 keyboardType: .emailAddress
                             )
                             
                             BrutalistTextField(
-                                placeholder: "Password",
+                                placeholder: "Şifre",
                                 icon: "lock.fill",
                                 text: $password,
                                 isSecure: true
@@ -66,7 +62,7 @@ struct SignInScreen: View {
                                             .font(AppTypography.body(weight: AppTypography.semiBold))
                                             .foregroundColor(rememberMe ? AppColors.taskRed : AppColors.textSecondary)
                                         
-                                        Text("Remember me")
+                                        Text("Beni Hatırla")
                                             .font(AppTypography.caption1())
                                             .foregroundColor(AppColors.textSecondary)
                                     }
@@ -77,7 +73,7 @@ struct SignInScreen: View {
                                 NavigationLink {
                                     ForgotPasswordScreen()
                                 } label: {
-                                    Text("Forgot Password?")
+                                    Text("Şifremi Unuttum")
                                         .font(AppTypography.caption1(weight: AppTypography.semiBold))
                                         .foregroundColor(AppColors.taskRed)
                                 }
@@ -87,7 +83,7 @@ struct SignInScreen: View {
                         
                         // Sign In Button
                         VStack(spacing: 16) {
-                            BrutalistButton.task(title: "Sign In", icon: nil) {
+                            BrutalistButton.task(title: "Giriş Yap", icon: "arrow.right.circle.fill") {
                                 Task {
                                     do {
                                         try await authService.signIn(email: email, password: password)
@@ -104,9 +100,9 @@ struct SignInScreen: View {
                                     .fill(AppColors.border.opacity(0.3))
                                     .frame(height: 1)
                                 
-                                Text("OR")
+                                Text("VEYA")
                                     .font(AppTypography.caption1(weight: AppTypography.semiBold))
-                                    .foregroundColor(AppColors.textLight)
+                                    .foregroundColor(AppColors.textTertiary)
                                     .padding(.horizontal, 12)
                                 
                                 Rectangle()
@@ -115,20 +111,47 @@ struct SignInScreen: View {
                             }
                             .padding(.horizontal, 24)
                             
+                            // Google Sign In Button
+                            BrutalistButton(
+                                title: "Google ile Giriş Yap",
+                                icon: "g.circle.fill",
+                                backgroundColor: .white
+                            ) {
+                                Task {
+                                    do {
+                                        try await authService.signInWithGoogle()
+                                        // Google login sonrası kullanıcı adı/şifre oluşturma ekranına yönlendir
+                                        if let user = authService.currentUser,
+                                           let email = user.email,
+                                           let fullName = user.fullName {
+                                            googleUserEmail = email
+                                            googleUserFullName = fullName
+                                            authService.signOut() // Oturumu kapatıp manuel girişe zorluyoruz
+                                            showGoogleSetup = true
+                                        }
+                                    } catch {
+                                        showError = true
+                                    }
+                                }
+                            }
+                            .foregroundColor(.black)
+                            .padding(.horizontal, 24)
+                            
                             // Sign Up Link
                             HStack(spacing: 4) {
-                                Text("Don't have an account?")
+                                Text("Hesabınız yok mu?")
                                     .font(AppTypography.callout())
                                     .foregroundColor(AppColors.textSecondary)
                                 
                                 NavigationLink {
                                     SignUpScreen()
                                 } label: {
-                                    Text("Create Account")
+                                    Text("Hesap Oluştur")
                                         .font(AppTypography.callout(weight: AppTypography.bold))
                                         .foregroundColor(AppColors.taskRed)
                                 }
                             }
+                            .padding(.top, 8)
                         }
                         
                         Spacer()
@@ -145,10 +168,13 @@ struct SignInScreen: View {
                         .tint(.white)
                 }
             }
-            .alert("Error", isPresented: $showError) {
-                Button("OK", role: .cancel) {}
+            .navigationDestination(isPresented: $showGoogleSetup) {
+                GoogleSetupScreen(email: googleUserEmail, fullName: googleUserFullName)
+            }
+            .alert("Hata", isPresented: $showError) {
+                Button("Tamam", role: .cancel) {}
             } message: {
-                Text(authService.errorMessage ?? "An error occurred")
+                Text(authService.errorMessage ?? "Bir hata oluştu")
             }
         }
     }
@@ -157,7 +183,7 @@ struct SignInScreen: View {
 /// Şifre Sıfırlama Ekranı
 struct ForgotPasswordScreen: View {
     @Environment(\.dismiss) private var dismiss
-    @StateObject private var authService = AuthService()
+    @ObservedObject private var authService = AuthService.shared
     
     @State private var email = ""
     @State private var showSuccess = false
@@ -170,11 +196,11 @@ struct ForgotPasswordScreen: View {
             
             VStack(spacing: 32) {
                 VStack(spacing: 12) {
-                    Text("Reset Password")
+                    Text("Şifre Sıfırlama")
                         .font(AppTypography.title1(weight: AppTypography.bold))
                         .foregroundColor(AppColors.textPrimary)
                     
-                    Text("Enter your email address and we'll send you a link to reset your password.")
+                    Text("E-posta adresinizi girin, şifrenizi sıfırlamanız için size bir bağlantı gönderelim.")
                         .font(AppTypography.callout())
                         .foregroundColor(AppColors.textSecondary)
                         .multilineTextAlignment(.center)
@@ -183,14 +209,14 @@ struct ForgotPasswordScreen: View {
                 .padding(.top, 60)
                 
                 BrutalistTextField(
-                    placeholder: "Email",
+                    placeholder: "E-posta",
                     icon: "envelope.fill",
                     text: $email,
                     keyboardType: .emailAddress
                 )
                 .padding(.horizontal, 24)
                 
-                BrutalistButton.task(title: "Send Reset Link", icon: "paperplane.fill") {
+                BrutalistButton.task(title: "Sıfırlama Bağlantısı Gönder", icon: "paperplane.fill") {
                     Task {
                         do {
                             try await authService.resetPassword(email: email)
@@ -206,17 +232,17 @@ struct ForgotPasswordScreen: View {
             }
         }
         .navigationBarTitleDisplayMode(.inline)
-        .alert("Success", isPresented: $showSuccess) {
-            Button("OK") {
+        .alert("Başarılı", isPresented: $showSuccess) {
+            Button("Tamam") {
                 dismiss()
             }
         } message: {
-            Text("Password reset link sent to \(email)")
+            Text("Şifre sıfırlama bağlantısı \(email) adresine gönderildi.")
         }
-        .alert("Error", isPresented: $showError) {
-            Button("OK", role: .cancel) {}
+        .alert("Hata", isPresented: $showError) {
+            Button("Tamam", role: .cancel) {}
         } message: {
-            Text(authService.errorMessage ?? "An error occurred")
+            Text(authService.errorMessage ?? "Bir hata oluştu")
         }
     }
 }

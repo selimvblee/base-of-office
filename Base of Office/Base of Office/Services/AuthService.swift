@@ -156,7 +156,7 @@ class AuthService: ObservableObject {
     }
     
     /// Kayıt ol
-    func signUp(email: String, password: String, fullName: String, role: UserRole) async throws {
+    func signUp(email: String, password: String, fullName: String, role: UserRole, username: String? = nil) async throws {
         isLoading = true
         errorMessage = nil
         
@@ -167,6 +167,7 @@ class AuthService: ObservableObject {
                 id: result.user.uid,
                 email: email,
                 fullName: fullName,
+                username: username,
                 role: role
             )
             
@@ -190,20 +191,48 @@ class AuthService: ObservableObject {
         }
     }
     
-    /// Giriş yap
-    func signIn(email: String, password: String) async throws {
+    /// Giriş yap (Email veya Kullanıcı Adı ile)
+    func signIn(email identifier: String, password: String) async throws {
         isLoading = true
         errorMessage = nil
         
+        var targetEmail = identifier
+        
+        // Eğer giriş metni @ içermiyorsa kullanıcı adı olarak kabul et
+        if !identifier.contains("@") {
+            do {
+                let snapshot = try await db.collection(FirestoreCollections.users)
+                    .whereField("username", isEqualTo: identifier)
+                    .getDocuments()
+                
+                if let doc = snapshot.documents.first,
+                   let email = doc.data()["email"] as? String {
+                    targetEmail = email
+                } else {
+                    DispatchQueue.main.async {
+                        self.errorMessage = "Kullanıcı adı bulunamadı"
+                        self.isLoading = false
+                    }
+                    throw NSError(domain: "AuthService", code: -1, userInfo: [NSLocalizedDescriptionKey: "Kullanıcı adı bulunamadı"])
+                }
+            } catch {
+                DispatchQueue.main.async {
+                    self.errorMessage = "Giriş hatası: \(error.localizedDescription)"
+                    self.isLoading = false
+                }
+                throw error
+            }
+        }
+        
         do {
-            let result = try await auth.signIn(withEmail: email, password: password)
+            let result = try await auth.signIn(withEmail: targetEmail, password: password)
             fetchUserData(userId: result.user.uid)
             
             DispatchQueue.main.async {
                 self.isLoading = false
             }
             
-            print("✅ User signed in successfully: \(email)")
+            print("✅ User signed in successfully: \(targetEmail)")
         } catch {
             DispatchQueue.main.async {
                 self.errorMessage = error.localizedDescription
@@ -233,4 +262,66 @@ class AuthService: ObservableObject {
         print("✅ Password reset email sent to: \(email)")
     }
     
+    /// Belirli bir e-postaya sahip kullanıcının tüm verilerini sil (Admin/Debug aracı)
+    func deleteUserAllData(email: String) async throws {
+        isLoading = true
+        defer { isLoading = false }
+        
+        print("🔍 Verileri silme işlemi başlatıldı: \(email)")
+        
+        // 1. Kullanıcıyı bul
+        let snapshot = try await db.collection(FirestoreCollections.users)
+            .whereField("email", isEqualTo: email)
+            .getDocuments()
+        
+        guard let userDoc = snapshot.documents.first else {
+            print("❌ Kullanıcı bulunamadı: \(email)")
+            throw NSError(domain: "AuthService", code: 404, userInfo: [NSLocalizedDescriptionKey: "Kullanıcı bulunamadı"])
+        }
+        
+        let userId = userDoc.documentID
+        let userData = userDoc.data()
+        let teamId = userData["teamId"] as? String
+        
+        // 2. Kullanıcının görevlerini sil
+        let tasksSnapshot = try await db.collection(FirestoreCollections.tasks)
+            .whereField("assignedTo", isEqualTo: userId)
+            .getDocuments()
+        
+        for doc in tasksSnapshot.documents {
+            try await db.collection(FirestoreCollections.tasks).document(doc.documentID).delete()
+        }
+        
+        // 3. Kullanıcının oluşturduğu görevleri de sil (isteğe bağlı, ama temizlik için iyi)
+        let createdTasksSnapshot = try await db.collection(FirestoreCollections.tasks)
+            .whereField("assignedBy", isEqualTo: userId)
+            .getDocuments()
+        
+        for doc in createdTasksSnapshot.documents {
+            try await db.collection(FirestoreCollections.tasks).document(doc.documentID).delete()
+        }
+        
+        // 4. Kullanıcıyı takımlardan çıkar
+        if let teamId = teamId {
+            try await db.collection(FirestoreCollections.teams)
+                .document(teamId)
+                .updateData([
+                    "members": FieldValue.arrayRemove([userId])
+                ])
+        }
+        
+        // 5. Kullanıcının aktivitelerini sil
+        let activitiesSnapshot = try await db.collection(FirestoreCollections.activities)
+            .whereField("userId", isEqualTo: userId)
+            .getDocuments()
+        
+        for doc in activitiesSnapshot.documents {
+            try await db.collection(FirestoreCollections.activities).document(doc.documentID).delete()
+        }
+        
+        // 6. Kullanıcı dokümanını sil
+        try await db.collection(FirestoreCollections.users).document(userId).delete()
+        
+        print("✅ \(email) adresine ait tüm veriler başarıyla silindi.")
+    }
 }
