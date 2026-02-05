@@ -1,2 +1,0 @@
-Target dependency graph (1 target)
-Target 'Base of Office' in project 'Base of Office' (no dependencies)
