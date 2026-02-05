@@ -113,3 +113,6 @@ iOSInjectionProject/
 Network Trash Folder
 Temporary Items
 .apdisk
+
+# Auto-commit script
+auto-commit.sh
